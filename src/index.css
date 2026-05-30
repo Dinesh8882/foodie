@@ -1,0 +1,70 @@
+@import "tailwindcss";
+:root {
+  /* Primary */
+  --primary: #FF9800;
+  --primary-hover: #F57C00;
+  --primary-light: #FFF3E0;
+  --bg-dark: #050D1A;
+
+  /* Sidebar */
+  --sidebar-bg: #081325;
+
+  /* Background */
+  --bg-main: #F8F9FB;
+  --bg-card: #FFFFFF;
+
+  /* Text */
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+
+  /* Borders */
+  --border: #E5E7EB;
+
+  /* Success */
+  --success: #22C55E;
+
+  /* Danger */
+  --danger: #EF4444;
+
+  /* Warning */
+  --warning: #F59E0B;
+
+  /* Orange Gradient */
+  --gradient-start: #FFB020;
+  --gradient-end: #FF8A00;
+
+  /* Shadows */
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* White */
+  --white: #FFFFFF;
+
+
+  /* Font Family */
+  --font-primary: "Inter", sans-serif;
+
+  /* Font Sizes */
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 32px;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-sm: 1.3;
+  --lh-base: 1.5;
+  --lh-lg: 1.7;
+}
+
+body,html{
+    background-color: #050D1A;
+}
