@@ -9,14 +9,15 @@ import {
     FiSettings,
     FiLogOut,
 } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 
 const menuItems = [
-    { name: "Home", icon: <FiHome /> },
-    { name: "Menu", icon: <FiMenu /> },
-    { name: "Orders", icon: <FiClipboard /> },
-    { name: "Favorites", icon: <FiHeart /> },
-    { name: "Profile", icon: <FiUser /> },
-    { name: "Settings", icon: <FiSettings /> },
+    { name: "Home", icon: <FiHome />, link: '/' },
+    { name: "Menu", icon: <FiMenu />, link: '/menu' },
+    { name: "Orders", icon: <FiClipboard />, link: '/orders' },
+    { name: "Favorites", icon: <FiHeart />, link: '/favorites' },
+    { name: "Profile", icon: <FiUser />, link: '/profile' },
+    { name: "Settings", icon: <FiSettings />, link: '/settings' },
 ];
 
 
@@ -37,7 +38,8 @@ function Sidebar() {
                 {/* Menu */}
                 <div className="mt-10 space-y-3">
                     {menuItems.map((item, index) => (
-                        <button
+                        <NavLink
+                            to={item.link}
                             key={index}
                             onClick={() => setActive(item.name)}
                             className={`w-full cursor-pointer flex items-center gap-3 px-3 py-2 rounded-xl transition
@@ -48,7 +50,7 @@ function Sidebar() {
                         >
                             <span className="text-xl">{item.icon}</span>
                             <span className='md:block hidden'>{item.name}</span>
-                        </button>
+                        </NavLink>
                     ))}
                 </div>
             </div>
