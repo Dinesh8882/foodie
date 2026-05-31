@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import {
     FiHome,
@@ -10,6 +10,7 @@ import {
     FiLogOut,
 } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
+import { SidbarContext } from '../context/SidbarContext';
 
 const menuItems = [
     { name: "Home", icon: <FiHome />, link: '/' },
@@ -23,7 +24,8 @@ const menuItems = [
 
 function Sidebar() {
 
-    const [active, setActive] = useState("Home");
+
+    const { active, setActive } = useContext(SidbarContext)
 
     return (
         <div className=" md:w-80 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">

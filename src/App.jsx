@@ -25,10 +25,26 @@ function App() {
             <Menu />
           </Suspense>
         } />
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/favorites' element={<Favorites />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/settings' element={<Settings />} />
+        <Route path='/orders' element={
+          <Suspense fallback={<Loading />}>
+            <Orders />
+          </Suspense>
+        } />
+        <Route path='/favorites' element={
+          <Suspense fallback={<Loading />}>
+            <Favorites />
+          </Suspense>
+        } />
+        <Route path='/profile' element={
+          <Suspense fallback={<Loading />}>
+            <Profile />
+          </Suspense>
+        } />
+        <Route path='/settings' element={
+          <Suspense fallback={<Loading />}>
+            <Settings />
+          </Suspense>
+        } />
 
       </Routes>
     </div >
