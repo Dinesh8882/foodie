@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Sidebar from './shared/Sidebar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Loading from './shared/LoadingPage';
 
 const Menu = React.lazy(() => import("./pages/Menu"));
 const Orders = React.lazy(() => import("./pages/Orders"));
@@ -15,7 +16,12 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/menu' element={<Menu />} />
+        <Route path='/menu' element={
+          <Suspense fallback={<Loading />}>
+            <Menu />
+          </Suspense>
+        } />
+
         <Route path='/orders' element={<Orders />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/profile' element={<Profile />} />
