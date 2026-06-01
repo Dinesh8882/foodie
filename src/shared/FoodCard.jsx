@@ -3,12 +3,12 @@ import { FaRegHeart } from "react-icons/fa";
 
 export default function FoodCard({item}) {
   return (
-    <div className="w-58 bg-white rounded-2xl shadow-md overflow-hidden">
+    <div className="w-54 bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
         <img
           src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143"
           alt="Margherita Pizza"
-          className="w-full h-38 object-cover"
+          className="w-full h-30 object-cover"
         />
 
         <button className="absolute top-3 right-3">
@@ -21,7 +21,7 @@ export default function FoodCard({item}) {
           {item.name}
         </h2>
 
-        <p className="text-gray-500 text-sm mt-1">
+        <p className="text-gray-500 text-[14px] mt-1">
           {item.description}
         </p>
 

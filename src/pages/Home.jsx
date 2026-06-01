@@ -6,15 +6,18 @@ import SectionHeading from '../shared/SectionHeading'
 import FoodCard from '../shared/FoodCard'
 
 import { dishes } from '../data/dishes'
+import CartItem from '../shared/CartItem'
+import CartHeader from '../shared/CartHeader'
+import CheckOut from '../shared/CheckOut'
 
 function Home() {
     return (
         <Wrapper>
-            <div className='grid grid-cols-12'>
-                <div className='col-span-9'>
+            <div className='flex justify-between' >
+                <div className=''>
                     <SectionHeading title="Populer Dishes" />
                     <CategoryTabs />
-                    <div className='grid grid-cols-3 mt-4 gap-x-8 gap-y-4'>
+                    <div className='grid grid-cols-3 mt-4 gap-x-3 gap-y-4'>
                         {
                             dishes.map((item) => {
                                 return (
@@ -24,8 +27,14 @@ function Home() {
                         }
                     </div>
                 </div>
-                <div>
-
+                <div className='bg-white p-4 w-70 flex flex-col '>
+                    <div>
+                        <CartHeader />
+                        <div className='flex flex-col gap-2 overflow-y-auto h-68'>
+                            <CartItem />
+                        </div>
+                    </div>
+                    <CheckOut />
                 </div>
             </div>
         </ Wrapper >
