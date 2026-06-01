@@ -1,0 +1,58 @@
+export const dishes = [
+  {
+    id: 1,
+    name: "Margherita Pizza",
+    description: "Classic delight with 100% real mozzarella cheese.",
+    price: 8.99,
+    image: "/images/pizza.jpg",
+    category: "Pizza",
+    isFavorite: false,
+  },
+  {
+    id: 2,
+    name: "Cheese Burger",
+    description: "Juicy beef patty with cheddar cheese and fresh veggies.",
+    price: 6.49,
+    image: "/images/burger.jpg",
+    category: "Burger",
+    isFavorite: false,
+  },
+  {
+    id: 3,
+    name: "Creamy Alfredo Pasta",
+    description: "Creamy white sauce pasta with parmesan cheese.",
+    price: 7.99,
+    image: "/images/pasta.jpg",
+    category: "Pasta",
+    isFavorite: false,
+  },
+  {
+    id: 4,
+    name: "Spicy Chicken Wings",
+    description: "Hot and spicy chicken wings with special sauce.",
+    price: 5.49,
+    image: "/images/chicken-wings.jpg",
+    category: "Chicken",
+    isFavorite: false,
+  },
+  {
+    id: 5,
+    name: "Chocolate Lava Cake",
+    description: "Warm chocolate cake with melted lava inside.",
+    price: 4.49,
+    image: "/images/lava-cake.jpg",
+    category: "Dessert",
+    isFavorite: false,
+  },
+  {
+    id: 6,
+    name: "Fresh Orange Juice",
+    description: "100% natural orange juice full of vitamins.",
+    price: 2.99,
+    image: "/images/orange-juice.jpg",
+    category: "Drinks",
+    isFavorite: false,
+  },
+];
+
+

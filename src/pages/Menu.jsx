@@ -1,10 +1,12 @@
 import React from 'react'
 import Wrapper from '../shared/Wrapper'
+import SectionHeading from '../shared/SectionHeading'
 
 function Menu() {
   return (
     <Wrapper>
-      Menu
+      <SectionHeading title="Menu" />
+
     </Wrapper>
   )
 }
