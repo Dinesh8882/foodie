@@ -6,7 +6,7 @@ export default function FoodCard({item}) {
     <div className="w-54 bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
         <img
-          src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143"
+          src={item.image}
           alt="Margherita Pizza"
           className="w-full h-30 object-cover"
         />
