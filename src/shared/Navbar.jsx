@@ -48,7 +48,6 @@ function Navbar() {
             {/* Right Section */}
             <div className="flex items-center gap-5">
 
-                {activePage === "Orders" && (
                     <div className="relative">
                         <button className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
                             <FiShoppingCart />
@@ -58,10 +57,7 @@ function Navbar() {
                             4
                         </span>
                     </div>
-                )}
 
-                {
-                    activePage !== "Orders" && (
                         <div className="relative">
                             <button className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center">
                                 <FiBell />
@@ -71,8 +67,6 @@ function Navbar() {
                                 3
                             </span>
                         </div>
-                    )
-                }
 
                 <div className="flex items-center gap-3">
                     <img
