@@ -1,8 +1,13 @@
 import React from 'react'
 
-export default function SectionHeading({ title }) {
+const varients = {
+  cart: "mb-0",
+  default: "mb-5"
+}
+
+export default function SectionHeading({ title, varient }) {
   return (
-    <h2 className="text-2xl mb-5 font-bold text-gray-900">
+    <h2 className={`text-xl ${varients[varient] || varients.default} font-bold text-gray-900`}>
       {title}
     </h2>
   );
