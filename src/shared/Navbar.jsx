@@ -7,9 +7,18 @@ import {
     FiShoppingCart,
 } from "react-icons/fi";
 import { SidbarContext } from "../context/SidbarContext";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-    const { active: activePage } = useContext(SidbarContext)
+    const { active: activePage, setActive } = useContext(SidbarContext)
+
+    const navigate = useNavigate()
+
+    const navigationHandler = () => {
+        navigate("/cart")
+        setActive("Cart")
+    }
+
     return (
         <header className="bg-white px-6 py-4 flex items-center justify-between border-b border-gray-200">
 
@@ -31,7 +40,7 @@ function Navbar() {
                     <input
                         type="text"
                         placeholder={`Search ${activePage.toLowerCase()}...`}
-                        className={`w-full pl-11 pr-4 ${activePage === "Orders"?"py-2":"py-3"} border border-gray-200 rounded-xl`}
+                        className={`w-full pl-11 pr-4 ${activePage === "Orders" ? "py-2" : "py-3"} border border-gray-200 rounded-xl`}
                     />
                 </div>
 
@@ -48,25 +57,25 @@ function Navbar() {
             {/* Right Section */}
             <div className="flex items-center gap-5">
 
-                    <div className="relative">
-                        <button className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
-                            <FiShoppingCart />
-                        </button>
+                <div className={`relative ${activePage === "Cart"?"bg-orange-500":"bg-none"} rounded-xl`}>
+                    <button onClick={navigationHandler} className="w-10 h-10 cursor-pointer  border border-gray-200 flex items-center justify-center">
+                        <FiShoppingCart className={`${activePage === "Cart" && "text-white"}`}/>
+                    </button>
 
-                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                            4
-                        </span>
-                    </div>
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                        4
+                    </span>
+                </div>
 
-                        <div className="relative">
-                            <button className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center">
-                                <FiBell />
-                            </button>
+                <div className="relative">
+                    <button className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center">
+                        <FiBell />
+                    </button>
 
-                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs rounded-full flex items-center justify-center">
-                                3
-                            </span>
-                        </div>
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs rounded-full flex items-center justify-center">
+                        3
+                    </span>
+                </div>
 
                 <div className="flex items-center gap-3">
                     <img

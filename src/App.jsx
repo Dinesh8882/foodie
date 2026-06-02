@@ -8,6 +8,7 @@ const Orders = React.lazy(() => import("./pages/Orders"));
 const Favorites = React.lazy(() => import("./pages/Favorites"));
 const Profile = React.lazy(() => import("./pages/Profile"))
 const Settings = React.lazy(() => import("./pages/Settings"))
+const Cart = React.lazy(()=>import("./pages/Cart"))
 
 import Loading from './shared/LoadingPage'
 
@@ -43,13 +44,17 @@ function App() {
             <Profile />
           </Suspense>
         } />
-        
+
         <Route path='/settings' element={
           <Suspense fallback={<Loading />}>
             <Settings />
           </Suspense>
         } />
-
+        <Route path='/cart' element={
+          <Suspense fallback={<Loading />}>
+            <Cart />
+          </Suspense>
+        } />
       </Routes>
     </div >
   );

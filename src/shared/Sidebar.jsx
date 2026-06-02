@@ -28,7 +28,7 @@ function Sidebar() {
     const { active, setActive } = useContext(SidbarContext)
 
     return (
-        <div className=" md:w-80 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">
+        <div className=" md:w-78 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">
 
             {/* Logo */}
             <div>
@@ -44,7 +44,7 @@ function Sidebar() {
                             to={item.link}
                             key={index}
                             onClick={() => setActive(item.name)}
-                            className={`w-full cursor-pointer flex items-center gap-3 px-3 py-2 rounded-xl transition
+                            className={` cursor-pointer flex items-center gap-3 px-3 py-2 rounded-xl transition
                                      ${item.name === active
                                     ? "bg-orange-500"
                                     : "hover:bg-white/10"
@@ -60,7 +60,8 @@ function Sidebar() {
             <div>
                 <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl">
                     <FiLogOut />
-                    Logout
+                    <span className='md:block hidden'>Logout</span>
+
                 </button>
             </div>
         </div>

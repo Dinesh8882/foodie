@@ -3,7 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 
 export default function FoodCard({item}) {
   return (
-    <div className="w-54 bg-white rounded-2xl shadow-md overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
         <img
           src={item.image}

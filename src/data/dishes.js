@@ -57,6 +57,24 @@ export const dishes = [
     category: "Drinks",
     isFavorite: false,
   },
+   {
+    id: 7,
+    name: "Fresh Orange Juice",
+    description: "100% natural orange juice full of vitamins.",
+    price: 2.99,
+    image: cart2,
+    category: "Drinks",
+    isFavorite: false,
+  },
+   {
+    id: 8,
+    name: "Fresh Orange Juice",
+    description: "100% natural orange juice full of vitamins.",
+    price: 2.99,
+    image: cart2,
+    category: "Drinks",
+    isFavorite: false,
+  },
 ];
 
 
