@@ -2,6 +2,7 @@ import React from 'react'
 import { FaRegHeart } from "react-icons/fa";
 
 export default function FoodCard({item}) {
+
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
@@ -9,6 +10,7 @@ export default function FoodCard({item}) {
           src={item.image}
           alt="Margherita Pizza"
           className="w-full h-30 object-cover"
+          loading="lazy"
         />
 
         <button className="absolute top-3 right-3">

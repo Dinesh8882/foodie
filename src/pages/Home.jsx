@@ -9,6 +9,7 @@ import { dishes } from '../data/dishes'
 import CheckOut from '../shared/CheckOut'
 
 function Home() {
+
     return (
         <Wrapper>
             <SectionHeading title="Populer Dishes" />

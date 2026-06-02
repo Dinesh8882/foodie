@@ -8,7 +8,7 @@ const Orders = React.lazy(() => import("./pages/Orders"));
 const Favorites = React.lazy(() => import("./pages/Favorites"));
 const Profile = React.lazy(() => import("./pages/Profile"))
 const Settings = React.lazy(() => import("./pages/Settings"))
-const Cart = React.lazy(()=>import("./pages/Cart"))
+const Cart = React.lazy(() => import("./pages/Cart"))
 
 import Loading from './shared/LoadingPage'
 
@@ -18,44 +18,34 @@ function App() {
     <div className='flex'>
       <Sidebar />
 
-      <Routes>
-        <Route path='/' element={<Home />} />
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path='/' element={<Home />} />
 
-        <Route path='/menu' element={
-          <Suspense fallback={<Loading />}>
+          <Route path='/menu' element={
             <Menu />
-          </Suspense>
-        } />
+          } />
 
-        <Route path='/orders' element={
-          <Suspense fallback={<Loading />}>
+          <Route path='/orders' element={
             <Orders />
-          </Suspense>
-        } />
+          } />
 
-        <Route path='/favorites' element={
-          <Suspense fallback={<Loading />}>
+          <Route path='/favorites' element={
             <Favorites />
-          </Suspense>
-        } />
+          } />
 
-        <Route path='/profile' element={
-          <Suspense fallback={<Loading />}>
+          <Route path='/profile' element={
             <Profile />
-          </Suspense>
-        } />
+          } />
 
-        <Route path='/settings' element={
-          <Suspense fallback={<Loading />}>
+          <Route path='/settings' element={
             <Settings />
-          </Suspense>
-        } />
-        <Route path='/cart' element={
-          <Suspense fallback={<Loading />}>
+          } />
+          <Route path='/cart' element={
             <Cart />
-          </Suspense>
-        } />
-      </Routes>
+          } />
+        </Routes>
+      </Suspense>
     </div >
   );
 }
