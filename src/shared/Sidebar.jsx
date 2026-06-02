@@ -28,7 +28,7 @@ function Sidebar() {
     const { active, setActive } = useContext(SidbarContext)
 
     return (
-        <div className=" md:w-78 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">
+        <div className=" md:w-64 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">
 
             {/* Logo */}
             <div>
