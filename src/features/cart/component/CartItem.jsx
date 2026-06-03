@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import img from '../../../assets/burgger.webp'
 
-export default function CartItem() {
+function CartItem() {
     return (
         <div className="bg-white rounded-xl p-4 border border-gray-100 mt-3">
             <div className="flex items-center justify-between ">
@@ -59,3 +59,5 @@ export default function CartItem() {
         </div>
     );
 }
+
+export default memo(CartItem)

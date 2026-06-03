@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FiClock, FiEye, FiChevronDown } from "react-icons/fi";
 
 
@@ -95,4 +95,4 @@ function TableBody() {
     )
 }
 
-export default TableBody
+export default memo(TableBody)
