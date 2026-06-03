@@ -1,5 +1,6 @@
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
+import img from '../../../assets/burgger.webp'
 
 export default function CartItem() {
     return (
@@ -8,7 +9,7 @@ export default function CartItem() {
                 {/* Left */}
                 <div className="flex items-center gap-4">
                     <img
-                        src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
+                        src={img}
                         alt="Pizza"
                         className="w-20 h-20 rounded-lg object-cover"
                         loading="lazy"
