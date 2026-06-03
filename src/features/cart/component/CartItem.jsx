@@ -11,6 +11,7 @@ export default function CartItem() {
                         src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
                         alt="Pizza"
                         className="w-20 h-20 rounded-lg object-cover"
+                        loading="lazy"
                     />
 
                     <div>

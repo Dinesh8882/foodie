@@ -1,5 +1,12 @@
-import cart1 from '../assets/Pizza.jpg'
-import cart2 from '../assets/Burgger.jpg'
+import cart1 from '../assets/Pizza.webp'
+import cart2 from '../assets/pizza2.webp'
+import cart3 from '../assets/pizza3.webp'
+import cart4 from '../assets/pizza4.webp'
+
+import cart5 from '../assets/Burgger.webp'
+import cart6 from '../assets/burgger2.webp'
+import cart7 from '../assets/burgger3.webp'
+import cart8 from '../assets/burgger4.webp'
 
 
 export const dishes = [
@@ -26,7 +33,7 @@ export const dishes = [
     name: "Creamy Alfredo Pasta",
     description: "Creamy white sauce pasta with parmesan cheese.",
     price: 7.99,
-    image: cart1,
+    image: cart3,
     category: "Pasta",
     isFavorite: false,
   },
@@ -35,7 +42,7 @@ export const dishes = [
     name: "Spicy Chicken Wings",
     description: "Hot and spicy chicken wings with special sauce.",
     price: 5.49,
-    image: cart2,
+    image: cart4,
     category: "Chicken",
     isFavorite: false,
   },
@@ -44,7 +51,7 @@ export const dishes = [
     name: "Chocolate Lava Cake",
     description: "Warm chocolate cake with melted lava inside.",
     price: 4.49,
-    image: cart1,
+    image: cart5,
     category: "Dessert",
     isFavorite: false,
   },
@@ -53,7 +60,7 @@ export const dishes = [
     name: "Fresh Orange Juice",
     description: "100% natural orange juice full of vitamins.",
     price: 2.99,
-    image: cart2,
+    image: cart6,
     category: "Drinks",
     isFavorite: false,
   },
@@ -62,7 +69,7 @@ export const dishes = [
     name: "Fresh Orange Juice",
     description: "100% natural orange juice full of vitamins.",
     price: 2.99,
-    image: cart2,
+    image: cart7,
     category: "Drinks",
     isFavorite: false,
   },
@@ -71,7 +78,7 @@ export const dishes = [
     name: "Fresh Orange Juice",
     description: "100% natural orange juice full of vitamins.",
     price: 2.99,
-    image: cart2,
+    image: cart8,
     category: "Drinks",
     isFavorite: false,
   },
