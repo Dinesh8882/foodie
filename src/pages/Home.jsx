@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Wrapper from '../shared/Wrapper'
 
 import CategoryTabs from '../shared/CategoriesTabs'
@@ -9,7 +9,6 @@ import { dishes } from '../data/dishes'
 import CheckOut from '../shared/CheckOut'
 
 function Home() {
-
     return (
         <Wrapper>
             <SectionHeading title="Populer Dishes" />

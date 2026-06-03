@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaRegHeart } from "react-icons/fa";
 
-export default function FoodCard({item}) {
-
+function FoodCard({ item }) {
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
@@ -40,3 +39,5 @@ export default function FoodCard({item}) {
     </div>
   );
 }
+
+export default memo(FoodCard)
