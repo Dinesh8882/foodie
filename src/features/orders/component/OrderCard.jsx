@@ -7,7 +7,7 @@ import {
 
 import img from "../../../assets/Burgger.webp"
 
-function OrderCard({ toggle, isOpen }) {
+function OrderCard({ toggle }) {
   return (
     <div className="bg-white border mt-4 border-gray-200 rounded-xl p-5 flex items-center justify-between shadow-sm">
 

@@ -1,14 +1,15 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, {lazy, Suspense, useEffect, useState } from 'react'
 import Sidebar from './shared/Sidebar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 
-const Menu = React.lazy(() => import("./pages/Menu"));
-const Orders = React.lazy(() => import("./pages/Orders"));
-const Favorites = React.lazy(() => import("./pages/Favorites"));
-const Profile = React.lazy(() => import("./pages/Profile"))
-const Settings = React.lazy(() => import("./pages/Settings"))
-const Cart = React.lazy(() => import("./pages/Cart"))
+const Menu = lazy(() => import("./pages/Menu"));
+const Orders = lazy(() => import("./pages/Orders"));
+const Favorites = lazy(() => import("./pages/Favorites"));
+const Profile = lazy(() => import("./pages/Profile"))
+const Settings = lazy(() => import("./pages/Settings"))
+const Cart = lazy(() => import("./pages/Cart"))
+const Checkout = lazy(()=>import('./pages/Checkout'))
 
 import Loading from './shared/LoadingPage'
 
@@ -44,6 +45,8 @@ function App() {
           <Route path='/cart' element={
             <Cart />
           } />
+
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </Suspense>
     </div >

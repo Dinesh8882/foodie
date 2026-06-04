@@ -4,6 +4,7 @@ import {
   FiShield,
 } from "react-icons/fi";
 import { FaTruck } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const OrderSummary = () => {
   return (
@@ -57,10 +58,10 @@ const OrderSummary = () => {
       </div>
 
       {/* Checkout Button */}
-      <button className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl bg-orange-500 py-2 text-md font-semibold text-white transition hover:bg-orange-600">
+      <NavLink to="/checkout" className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl bg-orange-500 py-2 text-md font-semibold text-white transition hover:bg-orange-600">
         <FiLock size={18} />
         Proceed to Checkout
-      </button>
+      </NavLink>
 
       {/* Secure Checkout */}
       <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">

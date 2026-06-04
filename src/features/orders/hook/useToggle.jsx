@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function useToggle(initial = true) {
+function useToggle(initial = false) {
     const [isOpen, setIsOpen] = useState(initial)
 
     const toggle = () => {
