@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { FiTrash2 } from "react-icons/fi";
-import img from '../../../assets/burgger.webp'
+import img from '../../../assets/Burgger.webp'
 
 function CartItem() {
     return (
