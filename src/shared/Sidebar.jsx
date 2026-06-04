@@ -15,7 +15,7 @@ import { SidbarContext } from '../context/SidbarContext';
 const menuItems = [
     { name: "Home", icon: <FiHome />, link: '/' },
     { name: "Menu", icon: <FiMenu />, link: '/menu' },
-    { name: "Orders", icon: <FiClipboard />, link: '/orders' },
+    { name: "My Orders", icon: <FiClipboard />, link: '/orders' },
     { name: "Favorites", icon: <FiHeart />, link: '/favorites' },
     { name: "Profile", icon: <FiUser />, link: '/profile' },
     { name: "Settings", icon: <FiSettings />, link: '/settings' },

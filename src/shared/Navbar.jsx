@@ -58,7 +58,7 @@ function Navbar() {
             <div className="flex items-center gap-5">
 
                 <div className={`relative ${activePage === "Cart"?"bg-orange-500":"bg-none"} rounded-xl`}>
-                    <button onClick={navigationHandler} className="w-10 h-10 cursor-pointer  border border-gray-200 flex items-center justify-center">
+                    <button onClick={navigationHandler} className="w-10 h-10 cursor-pointer rounded-xl border border-gray-200 flex items-center justify-center">
                         <FiShoppingCart className={`${activePage === "Cart" && "text-white"}`}/>
                     </button>
 
@@ -68,7 +68,7 @@ function Navbar() {
                 </div>
 
                 <div className="relative">
-                    <button className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center">
+                    <button className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
                         <FiBell />
                     </button>
 

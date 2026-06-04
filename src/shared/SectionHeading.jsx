@@ -2,6 +2,7 @@ import React from 'react'
 
 const varients = {
   cart: "mb-0",
+  orders:"mb-2",
   default: "mb-5"
 }
 
