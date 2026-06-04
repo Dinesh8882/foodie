@@ -7,10 +7,10 @@ import {
 
 import img from "../../../assets/Burgger.webp"
 
-function OrderCard() {
+function OrderCard({ toggle, isOpen }) {
   return (
     <div className="bg-white border mt-4 border-gray-200 rounded-xl p-5 flex items-center justify-between shadow-sm">
-      
+
       {/* Left Section */}
       <div className="flex items-center gap-4">
         <img
@@ -32,15 +32,6 @@ function OrderCard() {
           <p className="text-gray-400 text-sm mt-1">
             2 × Whopper • 1 × French Fries • 1 × Coke
           </p>
-
-          <div className="flex items-center gap-2 mt-3 text-sm text-gray-500">
-            <FiCalendar size={14} />
-            <span>May 18, 2024</span>
-
-            <span>•</span>
-
-            <span>07:45 PM</span>
-          </div>
         </div>
       </div>
 
@@ -62,11 +53,11 @@ function OrderCard() {
 
       {/* Right Section */}
       <div className="flex flex-col gap-3">
-        <button className="w-40 py-3 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
+        <button onClick={toggle} className="w-40 cursor-pointer py-2 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
           View Details
         </button>
 
-        <button className="w-40 py-3 border border-orange-500 text-orange-500 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-orange-50 transition">
+        <button className="w-40 py-2 border border-orange-500 text-orange-500 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-orange-50 transition">
           <FiRefreshCw size={16} />
           Reorder
         </button>

@@ -15,7 +15,7 @@ import Loading from './shared/LoadingPage'
 function App() {
 
   return (
-    <div className='flex'>
+    <div className='flex relative overflow-hidden'>
       <Sidebar />
 
       <Suspense fallback={<Loading />}>
