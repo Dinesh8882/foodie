@@ -11,7 +11,7 @@ import CheckOut from '../shared/CheckOut'
 function Home() {
     return (
         <Wrapper>
-            <SectionHeading title="Populer Dishes" />
+            <SectionHeading title="Populer Dishes" varient="home"/>
             <CategoryTabs />
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-4 gap-x-3 gap-y-4'>
                 {

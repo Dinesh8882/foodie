@@ -1,10 +1,9 @@
 import React from 'react'
 
 const varients = {
-  cart: "mb-0",
+  home:"mb-3",
   orders:"mb-2",
-  checkout:"mb-0",
-  default: "mb-5"
+  default: "mb-0"
 }
 
 export default function SectionHeading({ title, varient }) {

@@ -15,7 +15,7 @@ function Checkout() {
         <Wrapper>
             <NavLink to="/cart" onClick={() => setActive("Cart")} className="flex mb-3 items-center gap-2">
                 <FaArrowLeftLong />
-                <SectionHeading title="Checkout" varient="checkout" />
+                <SectionHeading title="Checkout" />
             </NavLink>
             <div className='flex gap-5'>
                 <div className='flex flex-col gap-5'>

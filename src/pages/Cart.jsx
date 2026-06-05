@@ -13,17 +13,17 @@ function Cart() {
     <Wrapper>
 
 
-      <div className='grid grid-cols-12 gap-6'>
-        <div className='col-span-8'>
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-6 w-full'>
+        <div className='md:col-span-8'>
           <div className='flex gap-3 items-center '>
             <FaShoppingCart className='text-xl' />
-            <SectionHeading title="My Cart" varient="cart" />
+            <SectionHeading title="My Cart" />
           </div>
 
           <CartItem />
         </div>
 
-        <div className='col-span-4 flex flex-col gap-5 mt-3'>
+        <div className='lg:col-span-4 flex w-ull justify-between lg:flex-col gap-5 mt-3'>
           <OrderSummary />
           <Features />
         </div>

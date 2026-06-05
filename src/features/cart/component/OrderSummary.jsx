@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const OrderSummary = () => {
   return (
-    <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+    <div className="lg:max-w-sm rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
       {/* Heading */}
       <h2 className="text-xl font-bold text-slate-900">
         Order Summary
