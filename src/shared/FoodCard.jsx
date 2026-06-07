@@ -1,5 +1,7 @@
 import React, { memo } from 'react'
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 
 function FoodCard({ item }) {
   return (
@@ -13,7 +15,13 @@ function FoodCard({ item }) {
         />
 
         <button className="absolute top-3 right-3">
-          <FaRegHeart className="text-white text-xl" />
+
+          {
+            item.isFavorite ? <FaHeart className='text-red-500 text-xl' /> : <FaRegHeart className="text-white text-xl" />
+          }
+
+
+
         </button>
       </div>
 
@@ -26,14 +34,20 @@ function FoodCard({ item }) {
           {item.description}
         </p>
 
-        <div className="flex items-center justify-between mt-3">
+        <div className={`${item.isFavorite ? "block" : "flex"} items-center justify-between mt-3`}>
           <span className="text-xl font-bold text-orange-500">
             ${item.price}
           </span>
-
-          <button className="bg-orange-500 text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
-            Add to Cart
-          </button>
+          <div className={`${item.isFavorite && "flex  justify-between items-center"}`}>
+            {
+              item.isFavorite && <div className='pl-4 '>
+                <RiDeleteBin6Line className='text-xl cursor-pointer' />
+              </div>
+            }
+            <button className="bg-orange-500 text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
