@@ -1,97 +1,137 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
-  FiUser,
-  FiClipboard,
-  FiMapPin,
-  FiCreditCard,
-  FiSettings,
-  FiHelpCircle,
-  FiLogOut,
-  FiChevronDown,
+    FiUser,
+    FiClipboard,
+    FiMapPin,
+    FiCreditCard,
+    FiSettings,
+    FiHelpCircle,
+    FiLogOut,
+    FiChevronDown,
 } from "react-icons/fi";
 
-import  profile from '../assets/profile.webp'
+import profile from '../assets/profile.webp'
+import useToggle from "./hooks/useToggle";
+import { NavLink } from "react-router-dom";
+
+
+
+const profileMenuItems = [
+    {
+        id: 1,
+        label: "My Profile",
+        icon: FiUser,
+        path: "/profile",
+    },
+    {
+        id: 2,
+        label: "Order History",
+        icon: FiClipboard,
+        path: "/orders",
+    },
+    {
+        id: 3,
+        label: "Addresses",
+        icon: FiMapPin,
+        path: "/addresses",
+        active: true,
+    },
+    {
+        id: 4,
+        label: "Payment Methods",
+        icon: FiCreditCard,
+        path: "/payment-methods",
+    },
+];
+
 
 const ProfileDropdown = () => {
-  
+    const { toggle, isOpen } = useToggle(false)
 
-  return (
-    <div className="relative ">
-      {/* Profile Trigger */}
-      <button
-        className="flex items-center gap-2 cursor-pointer"
-      >
-        <img
-          src={profile}
-          alt="profile"
-          className="w-10 h-10 rounded-full object-cover"
-        />
-        <FiChevronDown className="text-gray-600" />
-      </button>
+    return (
+        <div className="relative ">
+            {/* Profile Trigger */}
+            <button
+                onClick={toggle}
+                className="flex items-center gap-2 cursor-pointer"
+            >
+                <img
+                    src={profile}
+                    alt="profile"
 
-      {/* Dropdown */}
-        <div className="absolute mt-2 right-0 top-14 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
-          {/* Arrow */}
-          <div className="absolute -top-2 right-10 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
+                    className="w-10 h-10 rounded-full object-cover"
+                />
+                <FiChevronDown className="text-gray-600" />
+            </button>
 
-          {/* User Info */}
-          <div className="p-5">
-            <div className="flex items-center gap-4">
-              <img
-                src={profile}
-                alt="user"
-                className="w-14 h-14 rounded-full object-cover"
-              />
+            {/* Dropdown */}
+            {
+                isOpen && (
+                    <div
 
-              <div>
-                <h3 className="font-semibold text-gray-900">
-                  Dinesh
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Dinesh@email.com
-                </p>
-              </div>
-            </div>
-          </div>
+                        className="absolute mt-2 right-0 top-14 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
+                        {/* Arrow */}
+                        <div className="absolute -top-2 right-10 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
 
-          <div className="border-t border-gray-100" />
+                        {/* User Info */}
+                        <div className="p-5">
+                            <div className="flex items-center gap-4">
+                                <img
+                                    src={profile}
+                                    alt="user"
+                                    className="w-14 h-14 rounded-full object-cover"
+                                />
 
-          {/* Main Menu */}
-          <div className="py-2">
-            <MenuItem icon={<FiUser />} text="My Profile" />
-            <MenuItem icon={<FiClipboard />} text="Order History" />
-            <MenuItem icon={<FiMapPin />} text="Addresses" />
-            <MenuItem
-              icon={<FiCreditCard />}
-              text="Payment Methods"
-            />
-          </div>
+                                <div>
+                                    <h3 className="font-semibold text-gray-900">
+                                        Dinesh
+                                    </h3>
+                                    <p className="text-sm text-gray-500">
+                                        Dinesh@email.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-          <div className="border-t border-gray-100" />
+                        <div className="border-t border-gray-100" />
 
-          {/* Settings */}
-          <div className="py-2">
-            <MenuItem icon={<FiSettings />} text="Settings" />
-            <MenuItem icon={<FiHelpCircle />} text="Help & Support" />
-          </div>
+                        {/* Main Menu */}
+                        <div className="py-2">
+                            {
+                                profileMenuItems.map((item) => (
+                                    <MenuItem icon={<item.icon />} text={item.label} path={item.path}/>
 
-          <div className="border-t border-gray-100" />
+                                ))
+                            }
+                        </div>
 
-          {/* Logout */}
-          <button className="w-full flex items-center gap-3 px-5 py-4 text-red-500 hover:bg-red-50 transition">
-            <FiLogOut size={18} />
-            <span className="font-medium">Logout</span>
-          </button>
+                        <div className="border-t border-gray-100" />
+
+                        {/* Settings */}
+                        <div className="py-2">
+                            <MenuItem icon={<FiSettings />} text="Settings" />
+                            <MenuItem icon={<FiHelpCircle />} text="Help & Support" />
+                        </div>
+
+                        <div className="border-t border-gray-100" />
+
+                        {/* Logout */}
+                        <button className="w-full flex items-center gap-3 px-5 py-4 text-red-500 hover:bg-red-50 transition">
+                            <FiLogOut size={18} />
+                            <span className="font-medium">Logout</span>
+                        </button>
+                    </div>
+                )
+            }
         </div>
-    </div>
-  );
+    );
 };
 
-const MenuItem = ({ icon, text }) => (
-  <button className="w-full flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-gray-50 transition">
-    <span className="text-lg">{icon}</span>
-    <span>{text}</span>
-  </button>
+const MenuItem = ({ icon: Icon, text ,path}) => (
+    <NavLink to={path} className="w-full flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-gray-50 transition">
+        <span className="text-lg">{Icon}</span>
+        <span>{text}</span>
+    </NavLink>
 );
 
 export default ProfileDropdown;

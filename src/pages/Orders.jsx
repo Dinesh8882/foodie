@@ -4,7 +4,7 @@ import OrderTabs from '../features/orders/component/OrderTabs'
 import OrderCard from '../features/orders/component/OrderCard'
 import SectionHeading from '../shared/SectionHeading'
 import OrderDetails from '../features/orders/component/OrderDetails'
-import useToggle from '../features/orders/hook/useToggle'
+import useToggle from '../shared/hooks/useToggle'
 
 function Orders() {
   const { toggle, isOpen } = useToggle(false)
