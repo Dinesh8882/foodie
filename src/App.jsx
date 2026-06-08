@@ -1,11 +1,11 @@
 import React, {lazy, Suspense, useEffect, useState } from 'react'
-import Sidebar from './shared/Sidebar';
-import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import Sidebar from './shared/Sidebar'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
 
-const Menu = lazy(() => import("./pages/Menu"));
-const Orders = lazy(() => import("./pages/Orders"));
-const Favorites = lazy(() => import("./pages/Favorites"));
+const Menu = lazy(() => import("./pages/Menu"))
+const Orders = lazy(() => import("./pages/Orders"))
+const Favorites = lazy(() => import("./pages/Favorites"))
 const Profile = lazy(() => import("./pages/Profile"))
 const Settings = lazy(() => import("./pages/Settings"))
 const Cart = lazy(() => import("./pages/Cart"))

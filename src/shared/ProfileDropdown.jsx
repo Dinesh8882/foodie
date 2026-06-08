@@ -47,6 +47,7 @@ const profileMenuItems = [
 
 const ProfileDropdown = () => {
     const { toggle, isOpen } = useToggle(false)
+    
 
     return (
         <div className="relative ">
@@ -61,7 +62,7 @@ const ProfileDropdown = () => {
 
                     className="w-10 h-10 rounded-full object-cover"
                 />
-                <FiChevronDown className="text-gray-600" />
+                <FiChevronDown className={`text-gray-600 ${isOpen && "rotate-180"}`} />
             </button>
 
             {/* Dropdown */}
