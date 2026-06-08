@@ -22,23 +22,19 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path='/' element={<Home />} />
-
+          
           <Route path='/menu' element={
             <Menu />
           } />
-
           <Route path='/orders' element={
             <Orders />
           } />
-
           <Route path='/favorites' element={
             <Favorites />
           } />
-
           <Route path='/profile' element={
             <Profile />
           } />
-
           <Route path='/settings' element={
             <Settings />
           } />

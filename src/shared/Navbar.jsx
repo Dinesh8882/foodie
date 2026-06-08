@@ -8,6 +8,7 @@ import {
 } from "react-icons/fi";
 import { SidbarContext } from "../context/SidbarContext";
 import { useNavigate } from "react-router-dom";
+import ProfileDropdown from "./ProfileDropdown";
 
 function Navbar() {
     const { active: activePage, setActive } = useContext(SidbarContext)
@@ -20,7 +21,7 @@ function Navbar() {
     }
 
     return (
-        <header className="bg-white px-6 py-4 flex items-center justify-between border-b border-gray-200">
+        <header className="bg-white relative px-6 py-4 flex items-center justify-between border-b border-gray-200">
 
             {/* Left Section */}
             {activePage === "Orders" && (
@@ -57,9 +58,9 @@ function Navbar() {
             {/* Right Section */}
             <div className="flex items-center gap-5">
 
-                <div className={`relative ${activePage === "Cart"?"bg-orange-500":"bg-none"} rounded-xl`}>
+                <div className={`relative ${activePage === "Cart" ? "bg-orange-500" : "bg-none"} rounded-xl`}>
                     <button onClick={navigationHandler} className="w-10 h-10 cursor-pointer rounded-xl border border-gray-200 flex items-center justify-center">
-                        <FiShoppingCart className={`${activePage === "Cart" && "text-white"}`}/>
+                        <FiShoppingCart className={`${activePage === "Cart" && "text-white"}`} />
                     </button>
 
                     <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
@@ -77,16 +78,10 @@ function Navbar() {
                     </span>
                 </div>
 
-                <div className="flex items-center gap-3">
-                    <img
-                        src="https://i.pravatar.cc/150?img=12"
-                        alt="profile"
-                        className="w-11 h-11 rounded-full"
-                    />
+                <ProfileDropdown />
 
-                    <FiChevronDown />
-                </div>
             </div>
+
         </header>
     );
 }
