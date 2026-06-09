@@ -11,7 +11,7 @@ function AddressForm() {
                     </label>
                     <input
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Dinesh"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
                     />
                 </div>
@@ -22,7 +22,7 @@ function AddressForm() {
                     </label>
                     <input
                         type="text"
-                        placeholder="+1 9876543210"
+                        placeholder="+91 98****210"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
                     />
                 </div>
@@ -48,7 +48,7 @@ function AddressForm() {
                     </label>
                     <input
                         type="text"
-                        placeholder="New York"
+                        placeholder="New Delhi"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
                     />
                 </div>
@@ -59,7 +59,7 @@ function AddressForm() {
                     </label>
                     <input
                         type="text"
-                        placeholder="NY"
+                        placeholder="IN"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
                     />
                 </div>

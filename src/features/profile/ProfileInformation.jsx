@@ -12,11 +12,11 @@ const ProfileInformation = () => {
     const [editing, setEditing] = useState(false);
 
     const [formData, setFormData] = useState({
-        fullName: "John Doe",
-        dob: "1995-03-15",
-        email: "john.doe@email.com",
+        fullName: "Dinesh",
+        dob: "2002-01-19",
+        email: "dinesh@email.com",
         gender: "Male",
-        phone: "+1 9876543210",
+        phone: "+91 98***230",
         memberSince: "2024-01-12",
     });
 

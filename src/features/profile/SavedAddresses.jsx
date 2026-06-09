@@ -16,8 +16,8 @@ const SavedAddresses = () => {
       type: "Home",
       icon: <FiHome size={24} />,
       badge: "Default",
-      address: "22 Baker Street, Apartment 4B, New York, NY 10001, USA",
-      phone: "+1 9876543210",
+      address: "22 Baker Street, Apartment 4B, New Delhi, INDIA",
+      phone: "+91 98****210",
       bg: "bg-orange-50",
       iconColor: "text-orange-500",
     }
