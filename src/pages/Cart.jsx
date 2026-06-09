@@ -14,7 +14,7 @@ function Cart() {
 
 
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-6 w-full'>
-        <div className='md:col-span-8'>
+        <div className='lg:col-span-8'>
           <div className='flex gap-3 items-center '>
             <FaShoppingCart className='text-xl' />
             <SectionHeading title="My Cart" />
@@ -23,7 +23,7 @@ function Cart() {
           <CartItem />
         </div>
 
-        <div className='lg:col-span-4 flex w-ull justify-between lg:flex-col gap-5 mt-3'>
+        <div className='grid grid-cols-1 sm:grid-cols-2  lg:col-span-4 lg:flex w-full justify-between lg:flex-col gap-5 mt-3'>
           <OrderSummary />
           <Features />
         </div>

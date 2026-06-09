@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import logo from '../assets/logo.webp'
 
 import {
     FiHome,
@@ -33,10 +34,11 @@ function Sidebar() {
 
             {/* Logo */}
             <div>
-                <h1 className="text-3xl font-bold text-orange-500">
+                <img src={logo} alt="logo" className='w-15 h-15 sm:hidden' loading='lazy' />
+                <h1 className="text-3xl sm:block hidden font-bold text-orange-500">
                     Foodie
                 </h1>
-                <p className="text-gray-400">Dashboard</p>
+                <p className="text-gray-400 sm:block hidden">Dashboard</p>
 
                 {/* Menu */}
                 <div className="mt-10 space-y-3">
