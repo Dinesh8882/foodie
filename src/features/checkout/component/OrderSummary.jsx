@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   FiShoppingBag,
   FiTruck,
@@ -6,8 +6,14 @@ import {
   FiLock,
 } from "react-icons/fi";
 import CheckoutProduct from "./CheckoutProduct";
+import { NavLink } from "react-router-dom";
+import { SidbarContext } from "../../../context/SidbarContext";
 
 const OrderSummary = () => {
+  const { setActive } = useContext(SidbarContext)
+
+  
+
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-5 w-full max-w-sm">
       {/* Header */}
@@ -84,10 +90,10 @@ const OrderSummary = () => {
       </div>
 
       {/* Button */}
-      <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
+      <NavLink to="/order-place" onClick={()=>setActive("My Orders")} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
         <FiLock />
         Place Order
-      </button>
+      </NavLink>
 
       {/* Footer */}
       <p className="text-center text-xs text-gray-500 mt-5 leading-relaxed">

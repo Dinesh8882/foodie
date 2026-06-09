@@ -44,7 +44,7 @@ function OrderInfo() {
 
           <div className="text-gray-600 text-sm ">
             <p className="font-medium text-gray-800">
-              John Doe
+              Dinesh
             </p>
 
             <p>
@@ -52,11 +52,11 @@ function OrderInfo() {
             </p>
 
             <p>
-              Bangalore, Karnataka - 560001
+              Delhi, New Delhi - 560001
             </p>
 
             <p>
-              +91 98765 43210
+              +91 98****10
             </p>
           </div>
         </div>
