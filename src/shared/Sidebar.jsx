@@ -33,20 +33,11 @@ function Sidebar() {
     return (
         <motion.div
 
-            initial={{
-                x: "-100%",
-            }}
-            animate={{
-                // x: isOpen ? 0 : "100%"
-            }}
-            transition={{
-                duration: 1,
-                ease: "easeInOut"
-            }}
-            className="hidden md:w-64 h-screen top-0 left-0 absolute z-50 sm:static bg-[#081325] text-white md:flex flex-col justify-between p-5">
+          
+            className="hidden  w-74  h-screen bg-[#081325] text-white md:flex flex-col items-start justify-between p-5">
 
             {/* Logo */}
-            <div>
+            <div className='w-full'>
                 {/* <img src={logo} alt="logo" className='w-15 h-15 sm:hidden' loading='lazy' /> */}
                 <h1 className="text-3xl  font-bold text-orange-500">
                     Foodie

@@ -56,7 +56,7 @@ function Navbar() {
                 )}
             </div>
 
-            <div className="flex sm:hidden cursor-pointer" onClick={toggle}>
+            <div className="flex sm:hidden cursor-pointer">
                 <FiMenu />
             </div>
 

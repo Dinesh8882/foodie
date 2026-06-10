@@ -13,40 +13,45 @@ const Checkout = lazy(() => import('./pages/Checkout'))
 const PlaceOrder = lazy(() => import('./pages/PlaceOrder'))
 
 import Loading from './shared/LoadingPage'
+import Navbar from './shared/Navbar'
 
 function App() {
 
   return (
-    <div className='flex relative overflow-hidden'>
-      <Sidebar />
+    <div className='flex relative overflow-hidden h-screen'>
 
-      <Suspense fallback={<Loading />}>
-        <Routes>
-          <Route path='/' element={<Home />} />
+        <Sidebar />
+        <div className='w-full overflow-y-auto overflow-hidden'>
+          <Navbar />
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path='/' element={<Home />} />
 
-          <Route path='/menu' element={
-            <Menu />
-          } />
-          <Route path='/orders' element={
-            <Orders />
-          } />
-          <Route path='/favorites' element={
-            <Favorites />
-          } />
-          <Route path='/profile' element={
-            <Profile />
-          } />
-          <Route path='/settings' element={
-            <Settings />
-          } />
-          <Route path='/cart' element={
-            <Cart />
-          } />
+              <Route path='/menu' element={
+                <Menu />
+              } />
+              <Route path='/orders' element={
+                <Orders />
+              } />
+              <Route path='/favorites' element={
+                <Favorites />
+              } />
+              <Route path='/profile' element={
+                <Profile />
+              } />
+              <Route path='/settings' element={
+                <Settings />
+              } />
+              <Route path='/cart' element={
+                <Cart />
+              } />
 
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/order-place' element={<PlaceOrder />} />
-        </Routes>
-      </Suspense>
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='/order-place' element={<PlaceOrder />} />
+            </Routes>
+          </Suspense>
+        </div>
+
     </div >
   );
 }
