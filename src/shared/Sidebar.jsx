@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logo from '../assets/logo.webp'
 
 import {
@@ -29,9 +29,13 @@ function Sidebar({ isOpen,toggle }) {
 
     const { active, setActive } = useContext(SidbarContext)
 
+    useEffect(()=>{
+        toggle()
+    },[active])
+
     return (
         <div
-            className={`absolute top-0 z-50 md:static transition-all duration-500 ease-in-out ${isOpen ? "left-0" : "-left-full"} sm:w-74 w-full  h-screen bg-[#081325] text-white md:flex flex-col items-start justify-between p-5`}>
+            className={`absolute top-0 z-50 md:static transition-all duration-500 ease-in-out ${isOpen ? "left-0" : "-left-full"} sm:w-74 w-full  h-screen bg-[#081325] text-white md:flex flex-col justify-between p-5`}>
 
             {/* Logo */}
             <div className='w-full'>
@@ -70,7 +74,7 @@ function Sidebar({ isOpen,toggle }) {
             <div>
                 <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl">
                     <FiLogOut />
-                    <span className='md:block hidden'>Logout</span>
+                    <span className=' '>Logout</span>
 
                 </button>
             </div>
