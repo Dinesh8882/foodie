@@ -33,8 +33,8 @@ const ProfileCard = () => {
   ];
 
   return (
-    <div className=" bg-gray-100 flex justify-center items-center ">
-      <div className="w-[320px] bg-white rounded-2xl shadow-md p-5">
+    <div className=" bg-gray-100 flex overflow-hidden rounded-2xl justify-center items-center ">
+      <div className=" bg-white w-full  shadow-md p-5">
 
         {/* Profile Image */}
 

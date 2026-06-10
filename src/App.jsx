@@ -14,43 +14,46 @@ const PlaceOrder = lazy(() => import('./pages/PlaceOrder'))
 
 import Loading from './shared/LoadingPage'
 import Navbar from './shared/Navbar'
+import useToggle from './shared/hooks/useToggle'
 
 function App() {
+
+  const { toggle: sidebarToggle, isOpen: isOpenSidebar } = useToggle(false)
 
   return (
     <div className='flex relative overflow-hidden h-screen'>
 
-        <Sidebar />
-        <div className='w-full overflow-y-auto overflow-hidden'>
-          <Navbar />
-          <Suspense fallback={<Loading />}>
-            <Routes>
-              <Route path='/' element={<Home />} />
+      <Sidebar isOpen={isOpenSidebar} toggle={sidebarToggle}/>
+      <div className='w-full overflow-y-auto overflow-hidden'>
+        <Navbar toggle={sidebarToggle} />
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path='/' element={<Home />} />
 
-              <Route path='/menu' element={
-                <Menu />
-              } />
-              <Route path='/orders' element={
-                <Orders />
-              } />
-              <Route path='/favorites' element={
-                <Favorites />
-              } />
-              <Route path='/profile' element={
-                <Profile />
-              } />
-              <Route path='/settings' element={
-                <Settings />
-              } />
-              <Route path='/cart' element={
-                <Cart />
-              } />
+            <Route path='/menu' element={
+              <Menu />
+            } />
+            <Route path='/orders' element={
+              <Orders />
+            } />
+            <Route path='/favorites' element={
+              <Favorites />
+            } />
+            <Route path='/profile' element={
+              <Profile />
+            } />
+            <Route path='/settings' element={
+              <Settings />
+            } />
+            <Route path='/cart' element={
+              <Cart />
+            } />
 
-              <Route path='/checkout' element={<Checkout />} />
-              <Route path='/order-place' element={<PlaceOrder />} />
-            </Routes>
-          </Suspense>
-        </div>
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/order-place' element={<PlaceOrder />} />
+          </Routes>
+        </Suspense>
+      </div>
 
     </div >
   );

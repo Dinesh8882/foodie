@@ -11,7 +11,7 @@ import { SidbarContext } from "../context/SidbarContext";
 import { useNavigate } from "react-router-dom";
 import ProfileDropdown from "./ProfileDropdown";
 
-function Navbar() {
+function Navbar({ toggle }) {
     const { active: activePage, setActive } = useContext(SidbarContext)
 
     const navigate = useNavigate()
@@ -33,6 +33,10 @@ function Navbar() {
                     </p>
                 </div>
             )}
+
+            <div onClick={toggle} className="flex md:hidden cursor-pointer">
+                <FiMenu />
+            </div>
 
             {/* Center Section */}
             <div className="sm:flex hidden items-center gap-4 ">
@@ -56,9 +60,7 @@ function Navbar() {
                 )}
             </div>
 
-            <div className="flex sm:hidden cursor-pointer">
-                <FiMenu />
-            </div>
+
 
 
 

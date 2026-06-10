@@ -9,10 +9,10 @@ import {
     FiUser,
     FiSettings,
     FiLogOut,
+    FiX,
 } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 import { SidbarContext } from '../context/SidbarContext';
-import { motion } from 'framer-motion';
 
 const menuItems = [
     { name: "Home", icon: <FiHome />, link: '/' },
@@ -24,25 +24,28 @@ const menuItems = [
 ];
 
 
-function Sidebar() {
+function Sidebar({ isOpen,toggle }) {
 
 
     const { active, setActive } = useContext(SidbarContext)
 
-
     return (
-        <motion.div
-
-          
-            className="hidden  w-74  h-screen bg-[#081325] text-white md:flex flex-col items-start justify-between p-5">
+        <div
+            className={`absolute top-0 z-50 md:static transition-all duration-500 ease-in-out ${isOpen ? "left-0" : "-left-full"} sm:w-74 w-full  h-screen bg-[#081325] text-white md:flex flex-col items-start justify-between p-5`}>
 
             {/* Logo */}
             <div className='w-full'>
                 {/* <img src={logo} alt="logo" className='w-15 h-15 sm:hidden' loading='lazy' /> */}
-                <h1 className="text-3xl  font-bold text-orange-500">
-                    Foodie
-                </h1>
-                <p className="text-gray-400">Dashboard</p>
+                <div className='flex items-center justify-between'>
+                    <div>
+                        <h1 className="text-3xl  font-bold text-orange-500">
+                            Foodie
+                        </h1>
+                        <p className="text-gray-400">Dashboard</p>
+                    </div>
+                    <FiX size={24} onClick={toggle} className='md:hidden flex'/>
+
+                </div>
 
                 {/* Menu */}
                 <div className="mt-10 space-y-3">
@@ -71,7 +74,7 @@ function Sidebar() {
 
                 </button>
             </div>
-        </motion.div>
+        </div>
     );
 }
 

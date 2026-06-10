@@ -5,7 +5,7 @@ const FilterCard = () => {
   const [price, setPrice] = useState(50);
 
   return (
-    <div className="w-100 bg-white rounded-xl shadow-sm border border-gray-100 px-5 py-4">
+    <div className="w-full md:w-100 bg-white rounded-xl shadow-sm border border-gray-100 px-5 py-4">
       {/* Title */}
       <h3 className="text-lg font-semibold text-gray-800 mb-6">
         Filters
