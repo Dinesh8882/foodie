@@ -12,6 +12,7 @@ import {
 } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 import { SidbarContext } from '../context/SidbarContext';
+import { motion } from 'framer-motion';
 
 const menuItems = [
     { name: "Home", icon: <FiHome />, link: '/' },
@@ -28,17 +29,29 @@ function Sidebar() {
 
     const { active, setActive } = useContext(SidbarContext)
 
-    
+
     return (
-        <div className=" md:w-64 h-screen bg-[#081325] text-white flex flex-col justify-between p-5">
+        <motion.div
+
+            initial={{
+                x: "-100%",
+            }}
+            animate={{
+                // x: isOpen ? 0 : "100%"
+            }}
+            transition={{
+                duration: 1,
+                ease: "easeInOut"
+            }}
+            className="hidden md:w-64 h-screen top-0 left-0 absolute z-50 sm:static bg-[#081325] text-white md:flex flex-col justify-between p-5">
 
             {/* Logo */}
             <div>
-                <img src={logo} alt="logo" className='w-15 h-15 sm:hidden' loading='lazy' />
-                <h1 className="text-3xl sm:block hidden font-bold text-orange-500">
+                {/* <img src={logo} alt="logo" className='w-15 h-15 sm:hidden' loading='lazy' /> */}
+                <h1 className="text-3xl  font-bold text-orange-500">
                     Foodie
                 </h1>
-                <p className="text-gray-400 sm:block hidden">Dashboard</p>
+                <p className="text-gray-400">Dashboard</p>
 
                 {/* Menu */}
                 <div className="mt-10 space-y-3">
@@ -54,7 +67,7 @@ function Sidebar() {
                                 }`}
                         >
                             <span className="text-xl">{item.icon}</span>
-                            <span className='md:block hidden'>{item.name}</span>
+                            <span className=''>{item.name}</span>
                         </NavLink>
                     ))}
                 </div>
@@ -67,7 +80,7 @@ function Sidebar() {
 
                 </button>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

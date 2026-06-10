@@ -3,7 +3,7 @@ import { FiHeart } from "react-icons/fi";
 
 const FavoriteCard = () => {
   return (
-    <div className="w-[240px] rounded-2xl bg-[#ff000036] p-5 shadow-sm border border-[#F5E6D8]">
+    <div className=" rounded-2xl bg-[#ff000036] p-5 shadow-sm border border-[#F5E6D8]">
       <div className="flex items-start gap-4">
         {/* Icon */}
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">

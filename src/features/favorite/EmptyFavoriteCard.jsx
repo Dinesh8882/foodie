@@ -3,7 +3,7 @@ import { FiHeart } from "react-icons/fi";
 
 const EmptyFavoriteCard = () => {
   return (
-    <div className="w-[240px] rounded-2xl bg-[#00ff1e2d] border border-[#E2F3E4] p-5 shadow-sm">
+    <div className=" rounded-2xl bg-[#00ff1e2d] border border-[#E2F3E4] p-5 shadow-sm">
       <div className="flex items-start justify-between gap-4">
         {/* Text Content */}
         <div className="flex-1">

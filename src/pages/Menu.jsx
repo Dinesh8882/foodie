@@ -12,7 +12,7 @@ function Menu() {
       <SectionHeading title="Menu" />
       <p className='text-gray-500 mb-4'>Choose from our delicious menu and enjoy your meal.</p>
       <CategoryTabs />
-      <div className='flex items-start mt-4 gap-5'>
+      <div className='flex flex-col md:flex-row items-start  mt-4 gap-5'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-x-3 gap-y-4'>
           {
             dishes.map((item) => {

@@ -5,6 +5,7 @@ import {
     FiChevronDown,
     FiCalendar,
     FiShoppingCart,
+    FiMenu,
 } from "react-icons/fi";
 import { SidbarContext } from "../context/SidbarContext";
 import { useNavigate } from "react-router-dom";
@@ -34,7 +35,7 @@ function Navbar() {
             )}
 
             {/* Center Section */}
-            <div className="flex items-center gap-4">
+            <div className="sm:flex hidden items-center gap-4 ">
                 <div className="relative w-72">
                     <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
 
@@ -54,6 +55,12 @@ function Navbar() {
                     </div>
                 )}
             </div>
+
+            <div className="flex sm:hidden cursor-pointer" onClick={toggle}>
+                <FiMenu />
+            </div>
+
+
 
             {/* Right Section */}
             <div className="flex items-center gap-5">
