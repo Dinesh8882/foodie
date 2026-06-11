@@ -17,7 +17,7 @@ function Checkout() {
                 <FaArrowLeftLong />
                 <SectionHeading title="Checkout" />
             </NavLink>
-            <div className='flex gap-5'>
+            <div className='flex flex-col md:flex-row gap-5'>
                 <div className='flex flex-col gap-5'>
                     <DeliveryAddress />
                     <DeliveryOptions />

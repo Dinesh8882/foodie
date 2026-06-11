@@ -24,18 +24,20 @@ const menuItems = [
 ];
 
 
-function Sidebar({ isOpen,toggle }) {
+function Sidebar({ isOpen, toggle }) {
 
 
     const { active, setActive } = useContext(SidbarContext)
 
-    useEffect(()=>{
-        toggle()
-    },[active])
+    useEffect(() => {
+        if (active !== "Cart") {
+            toggle()
+        }
+    }, [active])
 
     return (
         <div
-            className={`absolute top-0 z-50 md:static transition-all duration-500 ease-in-out ${isOpen ? "left-0" : "-left-full"} sm:w-74 w-full  h-screen bg-[#081325] text-white md:flex flex-col justify-between p-5`}>
+            className={`absolute top-0 z-50 md:static transition-all duration-500 ease-in-out ${isOpen ? "-left-full" : "left-0"} sm:w-74 w-full  h-screen bg-[#081325] text-white md:flex flex-col justify-between p-5`}>
 
             {/* Logo */}
             <div className='w-full'>
@@ -47,7 +49,7 @@ function Sidebar({ isOpen,toggle }) {
                         </h1>
                         <p className="text-gray-400">Dashboard</p>
                     </div>
-                    <FiX size={24} onClick={toggle} className='md:hidden flex'/>
+                    <FiX size={24} onClick={toggle} className='md:hidden flex' />
 
                 </div>
 

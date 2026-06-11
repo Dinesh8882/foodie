@@ -5,9 +5,9 @@ import img from '../../../assets/Burgger.webp'
 function CartItem() {
     return (
         <div className="bg-white rounded-xl p-4 border border-gray-100 mt-3">
-            <div className="flex items-center justify-between ">
+            <div className="flex flex-col sm:flex-row items-center justify-between ">
                 {/* Left */}
-                <div className="flex items-center gap-4">
+                <div className="flex w-full sm:w-auto items-center gap-4">
                     <img
                         src={img}
                         alt="Pizza"
@@ -26,33 +26,35 @@ function CartItem() {
                     </div>
                 </div>
 
-                {/* Price */}
-                <div>
-                    <span className="text-md font-bold text-orange-500">
-                        $8.99
-                    </span>
-
-                    {/* Quantity */}
-                    <div className="flex items-center mt-2 border border-gray-200 rounded-md overflow-hidden">
-                        <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
-                            −
-                        </button>
-
-                        <span className="w-8 h-8 border-x border-gray-200 flex items-center justify-center font-semibold text-gray-800">
-                            2
+                <div className="flex w-full sm:w-auto mt-4 sm:mt-0 items-end gap-10">
+                    {/* Price */}
+                    <div>
+                        <span className="text-md font-bold text-orange-500">
+                            $8.99
                         </span>
 
-                        <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
-                            +
-                        </button>
-                    </div>
-                </div>
+                        {/* Quantity */}
+                        <div className="flex items-center mt-2 border border-gray-200 rounded-md overflow-hidden">
+                            <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                                −
+                            </button>
 
-                {/* Remove */}
-                <button className="flex items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
-                    <FiTrash2 size={16} />
-                    Remove
-                </button>
+                            <span className="w-8 h-8 border-x border-gray-200 flex items-center justify-center font-semibold text-gray-800">
+                                2
+                            </span>
+
+                            <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Remove */}
+                    <button className="flex items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
+                        <FiTrash2 size={16} />
+                        Remove
+                    </button>
+                </div>
             </div>
 
             <div className="mt-4 border-t border-gray-100"></div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 function CheckoutProduct() {
     return (
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-4">
             <img
                 src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300"
                 alt="Pizza"
