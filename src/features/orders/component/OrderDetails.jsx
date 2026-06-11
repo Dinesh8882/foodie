@@ -19,7 +19,7 @@ function OrderDetails({ toggle, isOpen }) {
                 duration: 1,
                 ease: "easeInOut"
             }}
-            className='absolute overflow-y-auto top-0 right-0 h-screen bg-white w-sm z-50 text-black'>
+            className='absolute overflow-y-auto top-0 right-0 h-screen bg-white w-sm z-40 text-black'>
             <OrderDetailsHeader toggle={toggle} />
             <OrderInfo />
             <div className="border-t border-gray-200 my-1"></div>

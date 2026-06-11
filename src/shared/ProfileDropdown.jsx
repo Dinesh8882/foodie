@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import {
     FiUser,
     FiClipboard,
@@ -13,6 +13,7 @@ import {
 import profile from '../assets/profile.webp'
 import useToggle from "./hooks/useToggle";
 import { NavLink } from "react-router-dom";
+import { SidbarContext } from "../context/SidbarContext";
 
 
 
@@ -47,6 +48,7 @@ const profileMenuItems = [
 
 const ProfileDropdown = () => {
     const { toggle, isOpen } = useToggle(false)
+    const {setActive} = useContext(SidbarContext)
     
 
     return (
@@ -70,13 +72,13 @@ const ProfileDropdown = () => {
                 isOpen && (
                     <div
 
-                        className="absolute mt-2 right-0 top-14 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
+                        className="absolute mt-2 right-0 top-14 sm:w-80 w-69 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-20">
                         {/* Arrow */}
-                        <div className="absolute -top-2 right-10 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
+                        <div className=" w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
 
                         {/* User Info */}
-                        <div className="p-5">
-                            <div className="flex items-center gap-4">
+                        <div className="p-5" onClick={()=>setActive("Profile")}>
+                            <NavLink to="/profile" className="flex items-center gap-4">
                                 <img
                                     src={profile}
                                     alt="user"
@@ -91,7 +93,7 @@ const ProfileDropdown = () => {
                                         Dinesh@email.com
                                     </p>
                                 </div>
-                            </div>
+                            </NavLink>
                         </div>
 
                         <div className="border-t border-gray-100" />

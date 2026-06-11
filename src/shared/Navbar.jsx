@@ -61,9 +61,6 @@ function Navbar({ toggle }) {
             </div>
 
 
-
-
-
             {/* Right Section */}
             <div className="flex items-center gap-5">
 
