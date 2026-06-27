@@ -75,7 +75,7 @@ const SavedAddresses = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-col sm:flex-row">
                 <button className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50">
                   <FiEdit2 size={18} />
                 </button>
