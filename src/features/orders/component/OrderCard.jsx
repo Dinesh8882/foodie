@@ -9,10 +9,10 @@ import img from "../../../assets/Burgger.webp"
 
 function OrderCard({ toggle }) {
   return (
-    <div className="bg-white border mt-4 border-gray-200 rounded-xl p-5 flex items-center justify-between shadow-sm">
+    <div className="bg-white flex-col relative md:flex-row  border mt-4 border-gray-200 rounded-xl p-5 flex md:items-center justify-between shadow-sm">
 
       {/* Left Section */}
-      <div className="flex items-center gap-4">
+      <div className="flex sm:items-center gap-4 flex-col sm:flex-row">
         <img
           src={img}
           loading="lazy"
@@ -21,11 +21,11 @@ function OrderCard({ toggle }) {
         />
 
         <div>
-          <h3 className="text-xl font-semibold text-gray-900">
+          <h3 className="text-md lg:text-xl font-semibold text-gray-900">
             Order #ORD12345
           </h3>
 
-          <p className="text-gray-600 mt-1 font-medium">
+          <p className="text-gray-600 text-sm mt-1 font-medium">
             Burger King
           </p>
 
@@ -37,12 +37,12 @@ function OrderCard({ toggle }) {
 
       {/* Middle Section */}
       <div className="flex flex-col items-start gap-3">
-        <span className="flex items-center gap-1 bg-green-100 text-green-600 text-sm font-medium px-3 py-1 rounded-md">
+        <span className="flex items-center gap-1 absolute top-5 right-5 sm:static sm:mt-3 bg-green-100 text-green-600 text-sm font-medium px-3 py-1 rounded-md">
           Delivered
           <FiCheckCircle size={14} />
         </span>
 
-        <h4 className="text-xl font-bold text-gray-900">
+        <h4 className="text-sm sm:text-xl font-bold text-gray-900">
           ₹450.00
         </h4>
 
@@ -53,11 +53,11 @@ function OrderCard({ toggle }) {
 
       {/* Right Section */}
       <div className="flex flex-col gap-3">
-        <button onClick={toggle} className="w-40 cursor-pointer py-2 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
+        <button onClick={toggle} className="sm:w-40 cursor-pointer py-2 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
           View Details
         </button>
 
-        <button className="w-40 py-2 border border-orange-500 text-orange-500 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-orange-50 transition">
+        <button className="sm:w-40 py-2 border border-orange-500 text-orange-500 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-orange-50 transition">
           <FiRefreshCw size={16} />
           Reorder
         </button>
