@@ -1,9 +1,13 @@
 import React, { memo } from 'react'
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useDispatch } from 'react-redux';
 
 
-function FoodCard({ item }) {
+function FoodCard({ item, addItem }) {
+
+
+
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden">
       <div className="relative">
@@ -19,8 +23,6 @@ function FoodCard({ item }) {
           {
             item.isFavorite ? <FaHeart className='text-red-500 text-xl' /> : <FaRegHeart className="text-white text-xl" />
           }
-
-
 
         </button>
       </div>
@@ -44,7 +46,7 @@ function FoodCard({ item }) {
                 <RiDeleteBin6Line className='text-xl cursor-pointer' />
               </div>
             }
-            <button className="bg-orange-500 text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
+            <button onClick={() => addItem(item)} className="bg-orange-500 text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
               Add to Cart
             </button>
           </div>

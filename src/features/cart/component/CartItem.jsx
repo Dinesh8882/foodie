@@ -2,26 +2,26 @@ import React, { memo } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import img from '../../../assets/Burgger.webp'
 
-function CartItem() {
+function CartItem({item}) {
     return (
         <div className="bg-white rounded-xl p-4 border border-gray-100 mt-3">
             <div className="flex flex-col sm:flex-row items-center justify-between ">
                 {/* Left */}
                 <div className="flex w-full sm:w-auto items-center gap-4">
                     <img
-                        src={img}
-                        alt="Pizza"
+                        src={item.image}
+                        alt={item.category}
                         className="w-20 h-20 rounded-lg object-cover"
                         loading="lazy"
                     />
 
                     <div>
                         <h3 className="text-lg font-semibold text-gray-900">
-                            Margherita Pizza
+                            {item.name}
                         </h3>
 
                         <p className="mt-2 text-sm text-gray-500 max-w-[220px] leading-6">
-                            Classic delight with 100% real mozzarella cheese.
+                            {item.description}
                         </p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ function CartItem() {
                     {/* Price */}
                     <div>
                         <span className="text-md font-bold text-orange-500">
-                            $8.99
+                            ${item.price}
                         </span>
 
                         {/* Quantity */}

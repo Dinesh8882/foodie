@@ -10,6 +10,7 @@ export const dishes = [
     image: cart1,
     category: "Pizza",
     isFavorite: false,
+    addToCart: false
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ export const dishes = [
     image: cart1,
     category: "Burger",
     isFavorite: false,
+    addToCart: false
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const dishes = [
     image: cart1,
     category: "Pasta",
     isFavorite: false,
+    addToCart: false
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const dishes = [
     image: cart1,
     category: "Chicken",
     isFavorite: false,
+    addToCart: false
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ export const dishes = [
     image: cart1,
     category: "Dessert",
     isFavorite: false,
+    addToCart: false
   },
   {
     id: 6,
@@ -55,8 +60,9 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
+    addToCart: false
   },
-   {
+  {
     id: 7,
     name: "Fresh Orange",
     description: "100% natural orange juice full of vitamins.",
@@ -64,8 +70,9 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
+    addToCart: false
   },
-   {
+  {
     id: 8,
     name: "Orange Juice",
     description: "100% natural orange juice full of vitamins.",
@@ -73,6 +80,7 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
+    addToCart: false
   },
 ];
 

@@ -6,9 +6,13 @@ import { FaShoppingCart } from "react-icons/fa";
 import CartItem from '../features/cart/component/CartItem';
 import OrderSummary from '../features/cart/component/OrderSummary';
 import Features from '../features/cart/component/Features';
+import { useSelector } from 'react-redux';
 
 
 function Cart() {
+  const items = useSelector((state) => state.cartItem)
+
+
   return (
     <Wrapper>
 
@@ -20,7 +24,13 @@ function Cart() {
             <SectionHeading title="My Cart" />
           </div>
 
-          <CartItem />
+          {
+            items?.map((item) => (
+              <div key={item.id}>
+                <CartItem item={item} />
+              </div>
+            ))
+          }
         </div>
 
         <div className='grid grid-cols-1 sm:grid-cols-2  lg:col-span-4 lg:flex w-full justify-between lg:flex-col gap-5 mt-3'>
