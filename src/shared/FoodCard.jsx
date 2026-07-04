@@ -1,10 +1,11 @@
+import { removeItem } from 'framer-motion';
 import React, { memo } from 'react'
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useDispatch } from 'react-redux';
 
 
-function FoodCard({ item, addItem }) {
+function FoodCard({ item, addCartItem, isAdd, deleteItem }) {
 
 
 
@@ -46,8 +47,14 @@ function FoodCard({ item, addItem }) {
                 <RiDeleteBin6Line className='text-xl cursor-pointer' />
               </div>
             }
-            <button onClick={() => addItem(item)} className="bg-orange-500 text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
-              Add to Cart
+            <button onClick={() => (isAdd ? deleteItem(item.id) : addCartItem(item))} className="bg-orange-500 cursor-pointer text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
+              {
+                isAdd ? (
+                  "Remove"
+                ) : (
+                  "Add to Cart"
+                )
+              }
             </button>
           </div>
         </div>

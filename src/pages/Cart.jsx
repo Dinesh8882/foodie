@@ -7,10 +7,12 @@ import CartItem from '../features/cart/component/CartItem';
 import OrderSummary from '../features/cart/component/OrderSummary';
 import Features from '../features/cart/component/Features';
 import { useSelector } from 'react-redux';
+import { useCart } from '../hook/useCart';
 
 
 function Cart() {
   const items = useSelector((state) => state.cartItem)
+  const { deleteCartItem } = useCart()
 
 
   return (
@@ -25,11 +27,15 @@ function Cart() {
           </div>
 
           {
-            items?.map((item) => (
-              <div key={item.id}>
-                <CartItem item={item} />
-              </div>
-            ))
+            items.length !== 0 ? (
+              items?.map((item) => (
+                <div key={item.id}>
+                  <CartItem deleteCartItem={deleteCartItem} item={item} />
+                </div>
+              ))
+            ):(
+              <div>There no items in cart!</div>
+            )
           }
         </div>
 

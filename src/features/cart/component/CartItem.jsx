@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import img from '../../../assets/Burgger.webp'
 
-function CartItem({item}) {
+function CartItem({item,deleteCartItem}) {
     return (
         <div className="bg-white rounded-xl p-4 border border-gray-100 mt-3">
             <div className="flex flex-col sm:flex-row items-center justify-between ">
@@ -50,7 +50,7 @@ function CartItem({item}) {
                     </div>
 
                     {/* Remove */}
-                    <button className="flex items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
+                    <button onClick={()=>deleteCartItem(item.id)} className="flex cursor-pointer items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
                         <FiTrash2 size={16} />
                         Remove
                     </button>
