@@ -34,7 +34,10 @@ function Cart() {
                 </div>
               ))
             ):(
-              <div>There no items in cart!</div>
+              <div className='text-xl mt-10 text-center text-gray-500'>
+                <h3>Your cart is empty.</h3>
+                <p>Start shopping and discover amazing products!</p>
+              </div>
             )
           }
         </div>
