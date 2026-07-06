@@ -10,7 +10,8 @@ export const dishes = [
     image: cart1,
     category: "Pizza",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ export const dishes = [
     image: cart1,
     category: "Burger",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ export const dishes = [
     image: cart1,
     category: "Pasta",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ export const dishes = [
     image: cart1,
     category: "Chicken",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 5,
@@ -50,7 +54,8 @@ export const dishes = [
     image: cart1,
     category: "Dessert",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 6,
@@ -60,7 +65,8 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 7,
@@ -70,7 +76,8 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
   {
     id: 8,
@@ -80,7 +87,8 @@ export const dishes = [
     image: cart1,
     category: "Drinks",
     isFavorite: false,
-    addToCart: false
+    addToCart: false,
+    quantity: 0
   },
 ];
 

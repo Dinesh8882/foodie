@@ -12,7 +12,10 @@ import { useCart } from '../hook/useCart';
 
 function Cart() {
   const items = useSelector((state) => state.cartItem)
-  const { deleteCartItem } = useCart()
+  const { deleteCartItem, increaseQuan, decreaseQuan } = useCart()
+
+
+
 
 
   return (
@@ -28,12 +31,16 @@ function Cart() {
 
           {
             items.length !== 0 ? (
-              items?.map((item) => (
-                <div key={item.id}>
-                  <CartItem deleteCartItem={deleteCartItem} item={item} />
+              items?.map((item, id) => (
+                <div key={id}>
+                  <CartItem
+                    deleteCartItem={deleteCartItem}
+                    increaseQuan={increaseQuan}
+                    decreaseQuan={decreaseQuan}
+                    item={item} />
                 </div>
               ))
-            ):(
+            ) : (
               <div className='text-xl mt-10 text-center text-gray-500'>
                 <h3>Your cart is empty.</h3>
                 <p>Start shopping and discover amazing products!</p>

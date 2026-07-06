@@ -1,15 +1,18 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import img from '../../../assets/Burgger.webp'
 
-function CartItem({item,deleteCartItem}) {
+function CartItem({ item, deleteCartItem, increaseQuan, decreaseQuan }) {
+
+
+
     return (
         <div className="bg-white rounded-xl p-4 border border-gray-100 mt-3">
             <div className="flex flex-col sm:flex-row items-center justify-between ">
                 {/* Left */}
                 <div className="flex w-full sm:w-auto items-center gap-4">
                     <img
-                        src={item.image}
+                        src={img}
                         alt={item.category}
                         className="w-20 h-20 rounded-lg object-cover"
                         loading="lazy"
@@ -35,22 +38,22 @@ function CartItem({item,deleteCartItem}) {
 
                         {/* Quantity */}
                         <div className="flex items-center mt-2 border border-gray-200 rounded-md overflow-hidden">
-                            <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                            <button onClick={() => decreaseQuan(item.id)} className="cursor-pointer w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
                                 −
                             </button>
 
                             <span className="w-8 h-8 border-x border-gray-200 flex items-center justify-center font-semibold text-gray-800">
-                                2
+                                {item.quantity}
                             </span>
 
-                            <button className="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                            <button onClick={() => increaseQuan(item.id)} className="w-8 h-8 cursor-pointer flex items-center justify-center text-gray-500 hover:bg-gray-50">
                                 +
                             </button>
                         </div>
                     </div>
 
                     {/* Remove */}
-                    <button onClick={()=>deleteCartItem(item.id)} className="flex cursor-pointer items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
+                    <button onClick={() => deleteCartItem(item.id)} className="flex cursor-pointer items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
                         <FiTrash2 size={16} />
                         Remove
                     </button>

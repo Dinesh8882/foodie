@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addCart, deleteItem } from '../features/cart/slicers/cartSlicer'
+import { addCart, deleteItem, incrQuantity, decQuantity } from '../features/cart/slicers/cartSlicer'
 import { toast } from "sonner";
 
 export const useCart = () => {
@@ -15,8 +15,17 @@ export const useCart = () => {
     toast.success('Remove item from the cart!');
   };
 
+  const increaseQuan = (id) => {
+    dispatch(incrQuantity(id))
+  }
+
+  const decreaseQuan = (id) => {
+    dispatch(decQuantity(id))
+  }
   return {
     addCartItem,
     deleteCartItem,
+    increaseQuan,
+    decreaseQuan
   };
 };
