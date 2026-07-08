@@ -10,11 +10,12 @@ import {
 import { SidbarContext } from "../context/SidbarContext";
 import { useNavigate } from "react-router-dom";
 import ProfileDropdown from "./ProfileDropdown";
-import { useSelector } from "react-redux";
+import { useCart } from "../features/cart/hook/useCart";
 
 function Navbar({ toggle }) {
     const { active: activePage, setActive } = useContext(SidbarContext)
-    const items = useSelector((state) => state.cartItem)
+    const { cartItem } = useCart()
+
     const navigate = useNavigate()
 
     const navigationHandler = () => {
@@ -71,9 +72,9 @@ function Navbar({ toggle }) {
                     </button>
 
                     {
-                        items.length !== 0 && 
+                        cartItem.length !== 0 &&
                         <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
-                            {items.length}
+                            {cartItem.length}
                         </span>
                     }
                 </div>

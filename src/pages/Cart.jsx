@@ -7,16 +7,12 @@ import CartItem from '../features/cart/component/CartItem';
 import OrderSummary from '../features/cart/component/OrderSummary';
 import Features from '../features/cart/component/Features';
 import { useSelector } from 'react-redux';
-import { useCart } from '../hook/useCart';
+import { useCart } from '../features/cart/hook/useCart';
 
 
 function Cart() {
-  const items = useSelector((state) => state.cartItem)
-  const { deleteCartItem, increaseQuan, decreaseQuan } = useCart()
 
-
-
-
+  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem } = useCart()
 
   return (
     <Wrapper>
@@ -30,16 +26,23 @@ function Cart() {
           </div>
 
           {
-            items.length !== 0 ? (
-              items?.map((item, id) => (
-                <div key={id}>
-                  <CartItem
-                    deleteCartItem={deleteCartItem}
-                    increaseQuan={increaseQuan}
-                    decreaseQuan={decreaseQuan}
-                    item={item} />
-                </div>
-              ))
+            cartItem.length !== 0 ? (
+              cartItem?.map((item, id) => {
+
+                const product = products.find(p => p.id === item.id)
+
+                return (
+                  <div key={id}>
+                    <CartItem
+                      deleteCartItem={deleteCartItem}
+                      increaseQuan={increaseQuan}
+                      decreaseQuan={decreaseQuan}
+                      product={product} 
+                      quantity={item.quantity}
+                      />
+                  </div>
+                )
+              })
             ) : (
               <div className='text-xl mt-10 text-center text-gray-500'>
                 <h3>Your cart is empty.</h3>

@@ -1,12 +1,14 @@
-import { useDispatch } from "react-redux";
-import { addCart, deleteItem, incrQuantity, decQuantity } from '../features/cart/slicers/cartSlicer'
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
+import { addCart, decQuantity, deleteItem, incrQuantity } from "../slicers/cartSlicer";
 
 export const useCart = () => {
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.product.products)
+  const cartItem = useSelector((state) => state.cart.cartItem)
 
-  const addCartItem = (item) => {
-    dispatch(addCart(item));
+  const addCartItem = (id) => {
+    dispatch(addCart(id));
     toast.success('Item added in the cart!');
   };
 
@@ -26,6 +28,8 @@ export const useCart = () => {
     addCartItem,
     deleteCartItem,
     increaseQuan,
-    decreaseQuan
+    decreaseQuan,
+    products,
+    cartItem
   };
 };

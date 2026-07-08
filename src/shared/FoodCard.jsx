@@ -5,7 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useDispatch } from 'react-redux';
 
 
-function FoodCard({ item, addCartItem, isAdd, deleteItem }) {
+function FoodCard({ item, addCartItem, isAdd, deleteItem, addFavoItem, isFavorite, removeFavoItem }) {
 
 
 
@@ -22,7 +22,7 @@ function FoodCard({ item, addCartItem, isAdd, deleteItem }) {
         <button className="absolute top-3 right-3">
 
           {
-            item.isFavorite ? <FaHeart className='text-red-500 text-xl' /> : <FaRegHeart className="text-white text-xl" />
+            isFavorite ? <FaHeart onClick={() => removeFavoItem(item.id)} className='text-red-500 cursor-pointer text-xl' /> : <FaRegHeart onClick={() => addFavoItem(item.id)} className="text-white cursor-pointer text-xl" />
           }
 
         </button>
@@ -47,7 +47,7 @@ function FoodCard({ item, addCartItem, isAdd, deleteItem }) {
                 <RiDeleteBin6Line className='text-xl cursor-pointer' />
               </div>
             }
-            <button onClick={() => (isAdd ? deleteItem(item.id) : addCartItem(item))} className="bg-orange-500 cursor-pointer text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
+            <button onClick={() => (isAdd ? deleteItem(item.id) : addCartItem(item.id))} className="bg-orange-500 cursor-pointer text-white px-2 py-1.5 text-sm rounded-lg hover:bg-orange-600 transition">
               {
                 isAdd ? (
                   "Remove"

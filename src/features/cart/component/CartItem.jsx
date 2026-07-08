@@ -2,7 +2,7 @@ import React, { memo, useEffect } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import img from '../../../assets/Burgger.webp'
 
-function CartItem({ item, deleteCartItem, increaseQuan, decreaseQuan }) {
+function CartItem({ product, quantity, deleteCartItem, increaseQuan, decreaseQuan }) {
 
 
 
@@ -13,18 +13,18 @@ function CartItem({ item, deleteCartItem, increaseQuan, decreaseQuan }) {
                 <div className="flex w-full sm:w-auto items-center gap-4">
                     <img
                         src={img}
-                        alt={item.category}
+                        alt={product.category}
                         className="w-20 h-20 rounded-lg object-cover"
                         loading="lazy"
                     />
 
                     <div>
                         <h3 className="text-lg font-semibold text-gray-900">
-                            {item.name}
+                            {product.name}
                         </h3>
 
                         <p className="mt-2 text-sm text-gray-500 max-w-[220px] leading-6">
-                            {item.description}
+                            {product.description}
                         </p>
                     </div>
                 </div>
@@ -33,27 +33,27 @@ function CartItem({ item, deleteCartItem, increaseQuan, decreaseQuan }) {
                     {/* Price */}
                     <div>
                         <span className="text-md font-bold text-orange-500">
-                            ${item.price}
+                            ${product.price}
                         </span>
 
                         {/* Quantity */}
                         <div className="flex items-center mt-2 border border-gray-200 rounded-md overflow-hidden">
-                            <button onClick={() => decreaseQuan(item.id)} className="cursor-pointer w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                            <button onClick={() => decreaseQuan(product.id)} className="cursor-pointer w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50">
                                 −
                             </button>
 
                             <span className="w-8 h-8 border-x border-gray-200 flex items-center justify-center font-semibold text-gray-800">
-                                {item.quantity}
+                                {quantity}
                             </span>
 
-                            <button onClick={() => increaseQuan(item.id)} className="w-8 h-8 cursor-pointer flex items-center justify-center text-gray-500 hover:bg-gray-50">
+                            <button onClick={() => increaseQuan(product.id)} className="w-8 h-8 cursor-pointer flex items-center justify-center text-gray-500 hover:bg-gray-50">
                                 +
                             </button>
                         </div>
                     </div>
 
                     {/* Remove */}
-                    <button onClick={() => deleteCartItem(item.id)} className="flex cursor-pointer items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
+                    <button onClick={() => deleteCartItem(product.id)} className="flex cursor-pointer items-center gap-2 text-red-500 text-sm font-medium hover:text-red-600">
                         <FiTrash2 size={16} />
                         Remove
                     </button>
