@@ -1,7 +1,7 @@
 import React from "react";
 import { FiHeart } from "react-icons/fi";
 
-const FavoriteCard = () => {
+const FavoriteCard = ({ favoriteItems }) => {
   return (
     <div className=" rounded-2xl bg-[#ff000036] p-5 shadow-sm border border-[#F5E6D8]">
       <div className="flex items-start gap-4">
@@ -16,7 +16,11 @@ const FavoriteCard = () => {
             Your Favorites
           </h3>
 
-          <p className="mt-1 text-3xl font-bold text-orange-500">8</p>
+          <p className="mt-1 text-3xl font-bold text-orange-500">
+            {
+              favoriteItems.length 
+            }
+          </p>
 
           <p className="mt-1 text-sm text-gray-500">
             Items saved

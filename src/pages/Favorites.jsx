@@ -42,7 +42,7 @@ function Favorites() {
                     isAdd={isAdd}
                     item={product}
                     addCartItem={addCartItem}
-                    addFavoItem={addFavoItem}  
+                    addFavoItem={addFavoItem}
                     removeFavoItem={removeFavoItem}
                     deleteItem={deleteCartItem}
                   />
@@ -58,7 +58,7 @@ function Favorites() {
         }
 
         <div className='flex sm:w-60 flex-col gap-4 '>
-          <FavoriteCard />
+          <FavoriteCard favoriteItems={favoriteItems} />
           <EmptyFavoriteCard />
           <div className='bg-white rounded-xl p-4  flex flex-col gap-3'>
             <h3>You might also like</h3>
