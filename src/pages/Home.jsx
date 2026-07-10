@@ -17,6 +17,10 @@ function Home() {
     const cartItems = useSelector((state) => state.cart.cartItem)
     const { addCartItem, deleteCartItem } = useCart()
     const { addFavoItem, favoriteItems, removeFavoItem } = useFavorite()
+    const order = useSelector((state) => state.order.orders)
+
+    console.log(order);
+
 
     return (
         <Wrapper>

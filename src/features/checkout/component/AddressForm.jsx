@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddressForm() {
+function AddressForm({ address, setAddress }) {
     return (
         <form className="space-y-3">
             {/* Full Name & Phone */}
@@ -10,6 +10,12 @@ function AddressForm() {
                         Full Name
                     </label>
                     <input
+                        value={address.name}
+                        onChange={(e) => setAddress({
+                            ...address,
+                            name: e.target.value
+                        })}
+                        name='name'
                         type="text"
                         placeholder="Dinesh"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
@@ -21,6 +27,12 @@ function AddressForm() {
                         Phone Number
                     </label>
                     <input
+                        value={address.phone}
+                        onChange={(e) => setAddress({
+                            ...address,
+                            phone: e.target.value
+                        })}
+                        name='phone'
                         type="text"
                         placeholder="+91 98****210"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
@@ -34,6 +46,12 @@ function AddressForm() {
                     Address
                 </label>
                 <input
+                    name='address'
+                    value={address.address}
+                    onChange={(e) => setAddress({
+                        ...address,
+                        address: e.target.value
+                    })}
                     type="text"
                     placeholder="22 Baker Street, Apartment 4B"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
@@ -47,6 +65,12 @@ function AddressForm() {
                         City
                     </label>
                     <input
+                        name='city'
+                        value={address.city}
+                        onChange={(e) => setAddress({
+                            ...address,
+                            city: e.target.value
+                        })}
                         type="text"
                         placeholder="New Delhi"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
@@ -58,6 +82,12 @@ function AddressForm() {
                         State
                     </label>
                     <input
+                        name='state'
+                        value={address.state}
+                        onChange={(e) => setAddress({
+                            ...address,
+                            state: e.target.value
+                        })}
                         type="text"
                         placeholder="IN"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"
@@ -69,6 +99,12 @@ function AddressForm() {
                         ZIP Code
                     </label>
                     <input
+                        name='zip'
+                        value={address.zip}
+                        onChange={(e) => setAddress({
+                            ...address,
+                            zip: e.target.value
+                        })}
                         type="text"
                         placeholder="10001"
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-orange-400"

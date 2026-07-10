@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
-import { addCart, decQuantity, deleteItem, incrQuantity } from "../slicers/cartSlicer";
+import { addCart, decQuantity, deleteItem, incrQuantity, clearCart } from "../slicers/cartSlicer";
 
 export const useCart = () => {
   const dispatch = useDispatch();
@@ -24,12 +24,17 @@ export const useCart = () => {
   const decreaseQuan = (id) => {
     dispatch(decQuantity(id))
   }
+
+  const clearCartItems = () => {
+    dispatch(clearCart())
+  }
   return {
     addCartItem,
     deleteCartItem,
     increaseQuan,
     decreaseQuan,
     products,
-    cartItem
+    cartItem,
+    clearCartItems
   };
 };

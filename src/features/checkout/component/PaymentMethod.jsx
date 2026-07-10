@@ -7,33 +7,38 @@ import {
 
 const paymentMethods = [
   {
-    id: "cod",
+    id: "COD",
     title: "Cash on Delivery",
     description: "Pay with cash when your order is delivered",
     icon: FiDollarSign,
   },
   {
-    id: "card",
+    id: "CARD",
     title: "Credit / Debit Card",
     description: "Visa, Mastercard, Rupay, Amex",
     icon: FiCreditCard,
   },
   {
-    id: "upi",
+    id: "UPI",
     title: "UPI",
     description: "Pay using any UPI app",
     icon: FiSmartphone,
   },
   {
-    id: "paypal",
+    id: "PAYPAL",
     title: "PayPal",
     description: "Pay using your PayPal account",
     icon: FiCreditCard,
   },
 ];
 
-const PaymentMethod = () => {
-  const [selectedMethod, setSelectedMethod] = useState("cod");
+const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
+
+
+  const setMethod = (name) => {
+    console.log(name);
+
+  }
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -63,8 +68,9 @@ const PaymentMethod = () => {
             <input
               type="radio"
               name="paymentMethod"
-              checked={selectedMethod === method.id}
-              onChange={() => setSelectedMethod(method.id)}
+              value={method.id}
+              checked={paymentMethod === method.id}
+              onChange={() => setPaymentMethod(method.id)}
               className="mt-1 accent-orange-500"
             />
 

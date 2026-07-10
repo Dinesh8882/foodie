@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   FiTruck,
   FiCalendar,
@@ -6,8 +6,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 
-const DeliveryOptions = () => {
-  const [deliveryType, setDeliveryType] = useState("asap");
+const DeliveryOptions = ({ setDeliveryOption, deliveryOption }) => {
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5">
@@ -32,8 +31,8 @@ const DeliveryOptions = () => {
         <input
           type="radio"
           name="delivery"
-          checked={deliveryType === "asap"}
-          onChange={() => setDeliveryType("asap")}
+          checked={deliveryOption === "ASAP"}
+          onChange={() => setDeliveryOption("ASAP")}
           className="mt-1 accent-orange-500"
         />
 
@@ -53,8 +52,8 @@ const DeliveryOptions = () => {
           <input
             type="radio"
             name="delivery"
-            checked={deliveryType === "scheduled"}
-            onChange={() => setDeliveryType("scheduled")}
+            checked={deliveryOption === "SCHEDULED"}
+            onChange={() => setDeliveryOption("SCHEDULED")}
             className="mt-1 accent-orange-500"
           />
 
@@ -70,11 +69,10 @@ const DeliveryOptions = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Date Picker */}
               <div
-                className={`flex items-center justify-between border rounded-lg px-3 py-2.5 ${
-                  deliveryType === "scheduled"
-                    ? "bg-white"
-                    : "bg-gray-50 opacity-60"
-                }`}
+                className={`flex items-center justify-between border rounded-lg px-3 py-2.5 ${deliveryOption === "SCHEDULED"
+                  ? "bg-white"
+                  : "bg-gray-50 opacity-60"
+                  }`}
               >
                 <div className="flex items-center gap-2 text-gray-500">
                   <FiCalendar size={16} />
@@ -91,11 +89,10 @@ const DeliveryOptions = () => {
 
               {/* Time Picker */}
               <div
-                className={`flex items-center justify-between border rounded-lg px-3 py-2.5 ${
-                  deliveryType === "scheduled"
-                    ? "bg-white"
-                    : "bg-gray-50 opacity-60"
-                }`}
+                className={`flex items-center justify-between border rounded-lg px-3 py-2.5 ${deliveryOption === "SCHEDULED"
+                  ? "bg-white"
+                  : "bg-gray-50 opacity-60"
+                  }`}
               >
                 <div className="flex items-center gap-2 text-gray-500">
                   <FiClock size={16} />

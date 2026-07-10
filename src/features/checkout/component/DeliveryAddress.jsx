@@ -2,7 +2,7 @@ import React from "react";
 import { FiMapPin } from "react-icons/fi";
 import AddressForm from "./AddressForm";
 
-const DeliveryAddress = () => {
+const DeliveryAddress = ({ address, setAddress }) => {
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm w-full">
       {/* Header */}
@@ -22,7 +22,7 @@ const DeliveryAddress = () => {
       </div>
 
       {/* Form */}
-      <AddressForm />
+      <AddressForm setAddress={setAddress} address={address} />
     </div>
   );
 };

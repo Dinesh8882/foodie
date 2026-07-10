@@ -11,7 +11,7 @@ import { SidbarContext } from "../../../context/SidbarContext";
 import { useSelector } from "react-redux";
 import { useCart } from "../../cart/hook/useCart";
 
-const OrderSummary = () => {
+const OrderSummary = ({ handlePlaceOrder }) => {
   const { setActive } = useContext(SidbarContext)
   const cartItems = useSelector((state) => state.cart.cartItem)
   const products = useSelector((state) => state.product.products)
@@ -116,7 +116,7 @@ const OrderSummary = () => {
       </div>
 
       {/* Button */}
-      <NavLink to="/order-place" onClick={() => setActive("My Orders")} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
+      <NavLink to="" onClick={handlePlaceOrder} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
         <FiLock />
         Place Order
       </NavLink>
