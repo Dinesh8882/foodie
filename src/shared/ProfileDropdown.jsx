@@ -48,8 +48,8 @@ const profileMenuItems = [
 
 const ProfileDropdown = () => {
     const { toggle, isOpen } = useToggle(false)
-    const {setActive} = useContext(SidbarContext)
-    
+    const { setActive } = useContext(SidbarContext)
+
 
     return (
         <div className="relative ">
@@ -70,14 +70,10 @@ const ProfileDropdown = () => {
             {/* Dropdown */}
             {
                 isOpen && (
-                    <div
-
-                        className="absolute mt-2 right-0 top-14 sm:w-80 w-69 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-20">
-                        {/* Arrow */}
-                        <div className=" w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
+                    <div className="absolute mt-2 right-0 top-14 sm:w-80 w-69 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-20">
 
                         {/* User Info */}
-                        <div className="p-5" onClick={()=>setActive("Profile")}>
+                        <div className="p-5" onClick={() => setActive("Profile")}>
                             <NavLink to="/profile" className="flex items-center gap-4">
                                 <img
                                     src={profile}
@@ -102,7 +98,7 @@ const ProfileDropdown = () => {
                         <div className="py-2">
                             {
                                 profileMenuItems.map((item) => (
-                                    <MenuItem icon={<item.icon />} text={item.label} path={item.path}/>
+                                    <MenuItem icon={<item.icon />} text={item.label} path={item.path} />
 
                                 ))
                             }
@@ -130,7 +126,7 @@ const ProfileDropdown = () => {
     );
 };
 
-const MenuItem = ({ icon: Icon, text ,path}) => (
+const MenuItem = ({ icon: Icon, text, path }) => (
     <NavLink to={path} className="w-full flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-gray-50 transition">
         <span className="text-lg">{Icon}</span>
         <span>{text}</span>

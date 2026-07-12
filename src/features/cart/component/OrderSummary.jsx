@@ -6,7 +6,7 @@ import {
 import { FaTruck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-const OrderSummary = () => {
+const OrderSummary = ({ cartIsEmpty }) => {
   return (
     <div className="lg:max-w-sm rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
       {/* Heading */}
@@ -58,10 +58,10 @@ const OrderSummary = () => {
       </div>
 
       {/* Checkout Button */}
-      <NavLink to="/checkout" className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl bg-orange-500 py-2 text-md font-semibold text-white transition hover:bg-orange-600">
+      <button onClick={() => cartIsEmpty("Your cart is empty!")} className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl bg-orange-500 py-2 text-md font-semibold text-white transition cursor-pointer hover:bg-orange-600">
         <FiLock size={18} />
         Proceed to Checkout
-      </NavLink>
+      </button>
 
       {/* Secure Checkout */}
       <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">

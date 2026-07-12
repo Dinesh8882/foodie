@@ -116,10 +116,10 @@ const OrderSummary = ({ handlePlaceOrder }) => {
       </div>
 
       {/* Button */}
-      <NavLink to="" onClick={handlePlaceOrder} className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
+      <button onClick={handlePlaceOrder} className="w-full cursor-pointer bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition">
         <FiLock />
         Place Order
-      </NavLink>
+      </button>
 
       {/* Footer */}
       <p className="text-center text-xs text-gray-500 mt-5 leading-relaxed">

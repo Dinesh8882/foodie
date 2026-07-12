@@ -12,7 +12,7 @@ import { useCart } from '../features/cart/hook/useCart';
 
 function Cart() {
 
-  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem } = useCart()
+  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty } = useCart()
 
   return (
     <Wrapper>
@@ -37,9 +37,9 @@ function Cart() {
                       deleteCartItem={deleteCartItem}
                       increaseQuan={increaseQuan}
                       decreaseQuan={decreaseQuan}
-                      product={product} 
+                      product={product}
                       quantity={item.quantity}
-                      />
+                    />
                   </div>
                 )
               })
@@ -53,7 +53,7 @@ function Cart() {
         </div>
 
         <div className='grid grid-cols-1 sm:grid-cols-2  lg:col-span-4 lg:flex w-full justify-between lg:flex-col gap-5 mt-3'>
-          <OrderSummary />
+          <OrderSummary cartIsEmpty={cartIsEmpty} />
           <Features />
         </div>
       </div>

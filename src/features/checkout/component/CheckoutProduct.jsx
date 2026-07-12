@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 function CheckoutProduct({ item, quantity, deleteCartItem }) {
 
+    
     return (
         <div className="flex flex-row gap-4">
             <div>
@@ -44,7 +45,7 @@ function CheckoutProduct({ item, quantity, deleteCartItem }) {
                     </span>
 
                     <span className="font-semibold text-orange-500 text-gray-600">
-                        $17.98
+                        $ {item.price * quantity}
                     </span>
                 </div>
             </div>

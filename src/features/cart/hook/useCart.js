@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { addCart, decQuantity, deleteItem, incrQuantity, clearCart } from "../slicers/cartSlicer";
+import { useNavigate } from "react-router-dom";
 
 export const useCart = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products)
   const cartItem = useSelector((state) => state.cart.cartItem)
+  const navigate = useNavigate()
 
   const addCartItem = (id) => {
     dispatch(addCart(id));
@@ -28,6 +30,14 @@ export const useCart = () => {
   const clearCartItems = () => {
     dispatch(clearCart())
   }
+
+  const cartIsEmpty = (msg) => {
+    if (cartItem.length === 0) {
+      return toast.success(msg)
+    }
+    navigate("/checkout")
+  }
+
   return {
     addCartItem,
     deleteCartItem,
@@ -35,6 +45,8 @@ export const useCart = () => {
     decreaseQuan,
     products,
     cartItem,
-    clearCartItems
+    clearCartItems,
+    cartIsEmpty,
+    navigate
   };
 };

@@ -33,6 +33,14 @@ function Checkout() {
             paymentMethod,
             deliveryOption,
         });
+        setAddress({
+            name: "",
+            phone: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+        })
     };
 
 
