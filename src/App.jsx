@@ -19,13 +19,16 @@ import useToggle from './shared/hooks/useToggle'
 function App() {
 
   const { toggle: sidebarToggle, isOpen: isOpenSidebar } = useToggle(false)
+  const { toggle: profileToggle, isOpen: isOpenProfileToggle } = useToggle(false)
 
   return (
     <div className='flex relative overflow-hidden h-screen'>
 
-      <Sidebar isOpen={isOpenSidebar} toggle={sidebarToggle}/>
+
+      <Sidebar isOpen={isOpenSidebar} toggle={sidebarToggle} />
       <div className='w-full overflow-y-auto overflow-hidden'>
-        <Navbar toggle={sidebarToggle} />
+        <Navbar toggle={sidebarToggle} profileToggle={profileToggle} isOpenProfileToggle={isOpenProfileToggle} />
+
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path='/' element={<Home />} />

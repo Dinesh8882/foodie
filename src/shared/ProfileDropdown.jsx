@@ -14,6 +14,8 @@ import profile from '../assets/profile.webp'
 import useToggle from "./hooks/useToggle";
 import { NavLink } from "react-router-dom";
 import { SidbarContext } from "../context/SidbarContext";
+import { GiCrossedBones } from "react-icons/gi";
+
 
 
 
@@ -46,16 +48,37 @@ const profileMenuItems = [
 ];
 
 
-const ProfileDropdown = () => {
-    const { toggle, isOpen } = useToggle(false)
+const ProfileDropdown = ({ profileToggle, isOpenProfileToggle }) => {
     const { setActive } = useContext(SidbarContext)
+
+      const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target)
+            ) {
+                // Close dropdown
+                if (isOpenProfileToggle) {
+                    profileToggle();
+                }
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpenProfileToggle]);
 
 
     return (
-        <div className="relative ">
+        <div className="relative " ref={dropdownRef}>
             {/* Profile Trigger */}
             <button
-                onClick={toggle}
+                onClick={profileToggle}
                 className="flex items-center gap-2 cursor-pointer"
             >
                 <img
@@ -64,17 +87,17 @@ const ProfileDropdown = () => {
 
                     className="w-10 h-10 rounded-full object-cover"
                 />
-                <FiChevronDown className={`text-gray-600 ${isOpen && "rotate-180"}`} />
+                <FiChevronDown className={`text-gray-600 ${isOpenProfileToggle && "rotate-180"}`} />
             </button>
 
             {/* Dropdown */}
             {
-                isOpen && (
+                isOpenProfileToggle && (
                     <div className="absolute mt-2 right-0 top-14 sm:w-80 w-69 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-20">
 
                         {/* User Info */}
-                        <div className="p-5" onClick={() => setActive("Profile")}>
-                            <NavLink to="/profile" className="flex items-center gap-4">
+                        <div className="p-5 flex justify-between" >
+                            <NavLink onClick={() => setActive("Profile")} to="/profile" className="flex items-center gap-4">
                                 <img
                                     src={profile}
                                     alt="user"
@@ -90,6 +113,8 @@ const ProfileDropdown = () => {
                                     </p>
                                 </div>
                             </NavLink>
+                            <GiCrossedBones onClick={profileToggle} className="cursor-pointer"/>
+
                         </div>
 
                         <div className="border-t border-gray-100" />

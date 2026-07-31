@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import ProfileDropdown from "./ProfileDropdown";
 import { useCart } from "../features/cart/hook/useCart";
 
-function Navbar({ toggle }) {
+function Navbar({ toggle, profileToggle, isOpenProfileToggle }) {
     const { active: activePage, setActive } = useContext(SidbarContext)
     const { cartItem } = useCart()
 
@@ -89,7 +89,7 @@ function Navbar({ toggle }) {
                     </span>
                 </div>
 
-                <ProfileDropdown />
+                <ProfileDropdown profileToggle={profileToggle} isOpenProfileToggle={isOpenProfileToggle}/>
 
             </div>
 
