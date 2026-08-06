@@ -65,6 +65,10 @@
   --lh-lg: 1.7;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 body,html{
     background-color: #edeff3;
 }

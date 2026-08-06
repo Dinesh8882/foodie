@@ -20,6 +20,6 @@ createRoot(document.getElementById('root')).render(
         }} />
         <App />
       </SidbarContextProvider>
-    </BrowserRouter>,
+    </BrowserRouter>
   </Provider>
 )

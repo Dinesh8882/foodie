@@ -65,6 +65,7 @@ const ProfileDropdown = ({ profileToggle, isOpenProfileToggle }) => {
                 }
             }
         }
+        console.log(dropdownRef)
 
         document.addEventListener("mousedown", handleClickOutside);
 
@@ -122,8 +123,8 @@ const ProfileDropdown = ({ profileToggle, isOpenProfileToggle }) => {
                         {/* Main Menu */}
                         <div className="py-2">
                             {
-                                profileMenuItems.map((item) => (
-                                    <MenuItem icon={<item.icon />} text={item.label} path={item.path} />
+                                profileMenuItems.map((item,id) => (
+                                    <MenuItem key={id} icon={<item.icon />} text={item.label} path={item.path} />
 
                                 ))
                             }
