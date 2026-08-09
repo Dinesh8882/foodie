@@ -12,7 +12,8 @@ import { useCart } from '../features/cart/hook/useCart';
 
 function Cart() {
 
-  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty } = useCart()
+  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty, total, subTotal, deliveryFee, tax } = useCart()
+
 
   return (
     <Wrapper>
@@ -53,7 +54,13 @@ function Cart() {
         </div>
 
         <div className='grid grid-cols-1 sm:grid-cols-2  lg:col-span-4 lg:flex w-full justify-between lg:flex-col gap-5 mt-3'>
-          <OrderSummary cartIsEmpty={cartIsEmpty} />
+          <OrderSummary
+            cartIsEmpty={cartIsEmpty}
+            total={total}
+            deliveryFee={deliveryFee}
+            tax={tax}
+            subTotal={subTotal}
+          />
           <Features />
         </div>
       </div>

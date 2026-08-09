@@ -6,7 +6,7 @@ import {
 import { FaTruck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-const OrderSummary = ({ cartIsEmpty }) => {
+const OrderSummary = ({ cartIsEmpty, total, deliveryFee, tax, subTotal }) => {
   return (
     <div className="lg:max-w-sm rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
       {/* Heading */}
@@ -18,17 +18,17 @@ const OrderSummary = ({ cartIsEmpty }) => {
       <div className="mt-4 space-y-5">
         <div className="flex justify-between text-md text-slate-700">
           <span>Subtotal</span>
-          <span>$28.95</span>
+          <span>${subTotal.toFixed(1) || 0}</span>
         </div>
 
         <div className="flex justify-between text-md text-slate-700">
           <span>Delivery Fee</span>
-          <span>$2.00</span>
+          <span>${deliveryFee}</span>
         </div>
 
         <div className="flex justify-between text-md text-slate-700">
           <span>Tax (5%)</span>
-          <span>$1.45</span>
+          <span>${tax}</span>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const OrderSummary = ({ cartIsEmpty }) => {
         </h3>
 
         <span className="text-md font-bold text-orange-500">
-          $32.40
+          ${total}
         </span>
       </div>
 

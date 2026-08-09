@@ -9,6 +9,9 @@ export const useCart = () => {
   const cartItem = useSelector((state) => state.cart.cartItem)
   const navigate = useNavigate()
 
+  const deliveryFee = 2;
+  const tax = 1;
+
   const addCartItem = (id) => {
     dispatch(addCart(id));
     toast.success('Item added in the cart!');
@@ -38,6 +41,17 @@ export const useCart = () => {
     navigate("/checkout")
   }
 
+
+  const subTotal = cartItem.reduce((total, item) => {
+    const product = products.find((pro) => pro.id === item.id)
+
+
+    return total + (product?.price || 0) * item.quantity
+
+  }, 0);
+
+  const total = (subTotal + deliveryFee + tax).toFixed(0);
+
   return {
     addCartItem,
     deleteCartItem,
@@ -47,6 +61,11 @@ export const useCart = () => {
     cartItem,
     clearCartItems,
     cartIsEmpty,
-    navigate
+    navigate,
+
+    subTotal,
+    total,
+    deliveryFee,
+    tax
   };
 };
