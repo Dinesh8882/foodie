@@ -51,7 +51,7 @@ export const useCart = () => {
   }, 0);
 
   const total = (subTotal + deliveryFee + tax).toFixed(0);
-
+  const subTotalFormate = subTotal.toFixed(0)
   return {
     addCartItem,
     deleteCartItem,
@@ -63,7 +63,7 @@ export const useCart = () => {
     cartIsEmpty,
     navigate,
 
-    subTotal,
+    subTotalFormate,
     total,
     deliveryFee,
     tax

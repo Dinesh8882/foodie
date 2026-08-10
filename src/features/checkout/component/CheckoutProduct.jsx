@@ -31,7 +31,7 @@ function CheckoutProduct({ item, quantity, deleteCartItem }) {
                         {item.name}
                     </h3>
                     <span className="font-medium text-slate-700 text-sm">
-                        ${item.price}
+                        ${(item.price).toFixed(0)}
                     </span>
                 </div>
 
@@ -44,8 +44,8 @@ function CheckoutProduct({ item, quantity, deleteCartItem }) {
                         Qty: {quantity}
                     </span>
 
-                    <span className="font-semibold text-orange-500 text-gray-600">
-                        $ {item.price * quantity}
+                    <span className="font-semibold text-orange-500">
+                        ${(item.price * quantity).toFixed(0)}
                     </span>
                 </div>
             </div>

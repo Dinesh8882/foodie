@@ -15,9 +15,10 @@ const OrderSummary = ({ handlePlaceOrder }) => {
   const { setActive } = useContext(SidbarContext)
   const cartItems = useSelector((state) => state.cart.cartItem)
   const products = useSelector((state) => state.product.products)
-  const { deleteCartItem } = useCart()
+  const { deleteCartItem, subTotalFormate, total, deliveryFee, tax } = useCart()
 
   return (
+
     <div className="bg-white rounded-2xl border border-gray-200 p-5 w-full max-w-sm">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
@@ -41,6 +42,7 @@ const OrderSummary = ({ handlePlaceOrder }) => {
                     item={pro}
                     quantity={item.quantity}
                     deleteCartItem={deleteCartItem}
+                    
                   />
                   <div className="border-t border-gray-200 my-5" />
 
@@ -60,17 +62,17 @@ const OrderSummary = ({ handlePlaceOrder }) => {
       <div className="space-y-3 text-sm">
         <div className="flex justify-between text-gray-600">
           <span>Subtotal</span>
-          <span>$28.95</span>
+          <span>${subTotalFormate}</span>
         </div>
 
         <div className="flex justify-between text-gray-600">
           <span>Delivery Fee</span>
-          <span>$2.00</span>
+          <span>${deliveryFee}</span>
         </div>
 
         <div className="flex justify-between text-gray-600">
           <span>Tax (5%)</span>
-          <span>$1.45</span>
+          <span>${tax}</span>
         </div>
       </div>
 
@@ -84,7 +86,7 @@ const OrderSummary = ({ handlePlaceOrder }) => {
         </span>
 
         <span className="text-xl font-bold text-orange-500">
-          $32.40
+          ${total}
         </span>
       </div>
 

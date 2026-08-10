@@ -12,7 +12,7 @@ import { useCart } from '../features/cart/hook/useCart';
 
 function Cart() {
 
-  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty, total, subTotal, deliveryFee, tax } = useCart()
+  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty, total, subTotalFormate, deliveryFee, tax } = useCart()
 
 
   return (
@@ -59,7 +59,7 @@ function Cart() {
             total={total}
             deliveryFee={deliveryFee}
             tax={tax}
-            subTotal={subTotal}
+            subTotalFormate={subTotalFormate}
           />
           <Features />
         </div>
