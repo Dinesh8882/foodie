@@ -19,7 +19,6 @@ function Home() {
     const { addFavoItem, favoriteItems, removeFavoItem } = useFavorite()
     const order = useSelector((state) => state.order.orders)
 
-    console.log(order);
 
 
     return (

@@ -12,8 +12,19 @@ import { useCart } from '../features/cart/hook/useCart';
 
 function Cart() {
 
-  const { deleteCartItem, increaseQuan, decreaseQuan, products, cartItem, cartIsEmpty, total, subTotalFormate, deliveryFee, tax } = useCart()
-
+  const { 
+    deleteCartItem, 
+    increaseQuan, 
+    decreaseQuan, 
+    products, 
+    cartItem, 
+    cartIsEmpty, 
+    total, 
+    subTotalFormate, 
+    deliveryFee, 
+    tax 
+  } = useCart()
+  
 
   return (
     <Wrapper>

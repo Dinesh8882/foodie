@@ -9,11 +9,17 @@ import useOrders from '../features/orders/hook/useOrders'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import EmptyOrders from '../features/orders/component/EmptyOrders'
 import OrderHeader from '../features/orders/component/OrderHeader'
+import { useCart } from '../features/cart/hook/useCart'
 
 
 function Orders() {
   const { toggle, isOpen } = useToggle(false)
   const { orders } = useOrders()
+  const { cartItem } = useCart()
+
+
+
+
   return (
     <Wrapper>
       <div className=''>
@@ -22,11 +28,17 @@ function Orders() {
         <OrderTabs />
         {
           orders.length !== 0 ? (
-            orders.map((item) => {
+            orders.map((item,id) => {
 
-              console.log(item);
+              const isOpenOrder = orders.find((pro) => pro.id === item.id)
+
               return (
-                <OrderHeader order={item} toggle={toggle} isOpen={isOpen} />
+                <OrderHeader
+                  key={id}
+                  order={item}
+                  toggle={toggle}
+                  isOpen={isOpenOrder}
+                />
               )
             })
           ) : (

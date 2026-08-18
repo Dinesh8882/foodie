@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AiTwotoneInfoCircle } from "react-icons/ai";
 
 const initialState = {
     cartItem: []
@@ -18,6 +17,7 @@ export const cartSlice = createSlice({
                     quantity: 1
                 })
             }
+            
         },
         deleteItem: (state, action) => {
             state.cartItem = state.cartItem.filter((item) => item.id !== action.payload)

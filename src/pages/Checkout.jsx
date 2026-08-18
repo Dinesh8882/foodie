@@ -9,10 +9,13 @@ import OrderSummary from '../features/checkout/component/OrderSummary';
 import DeliveryOptions from '../features/checkout/component/DeliveryOptions';
 import PaymentMethod from '../features/checkout/component/PaymentMethod'
 import useOrders from '../features/orders/hook/useOrders';
+import { useCart } from '../features/cart/hook/useCart';
 
 function Checkout() {
     const { setActive } = useContext(SidbarContext)
     const { placedOrder } = useOrders()
+    const { subTotalFormate,
+        total, } = useCart()
 
     const [address, setAddress] = useState({
         name: "",
@@ -32,6 +35,8 @@ function Checkout() {
             address,
             paymentMethod,
             deliveryOption,
+            subtotal: subTotalFormate,
+            total
         });
         setAddress({
             name: "",
